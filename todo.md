@@ -197,3 +197,9 @@
 - [x] O‘zbek, English va Русский uchun i18n tizimi, 100 qurilma kontenti, Pixel Agent va tilga mos PDF eksportini qo‘shish; til auditlarini bajarish
 - [x] Saralangan qurilmalar PDF/CSV eksportida tanlangan tilni to‘liq qo‘llash
 - [x] OLED true-black testidagi vaqtinchalik effect timing flake’ini barqarorlashtirish va release regressiyasini qayta PASS qilish
+
+- [x] 2026-09-27: Autocomplete, interaktiv filter teglar va natija summary oqimini qo‘shish.
+- [x] 2026-09-27: “Mening laboratoriyam”/learning progress overview panelini mavjud localStorage oqimi bilan qo‘shish.
+- [x] 2026-09-27: Tanlangan/saralangan qurilmalar uchun ko‘p qurilmali PDF report oqimini boyitish.
+- [x] 2026-09-27: Safari/PWA install onboarding va offline status ko‘rsatmasini localization bilan qo‘shish.
+- [x] 2026-09-27: Birinchi bosqich uchun typecheck, build, unit/browser regressiya va production smoke auditini bajarish.
