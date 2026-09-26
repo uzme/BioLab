@@ -78,7 +78,16 @@ export function ThemeProvider({
     : undefined;
   const useSystemTheme = switchable ? () => setThemePreference("system") : undefined;
   const toggleContrastMode = switchable ? () => setContrastMode((mode) => mode === "standard" ? "high" : "standard") : undefined;
-  const toggleOledMode = switchable ? () => setDisplayMode((mode) => mode === "standard" ? "oled" : "standard") : undefined;
+  const toggleOledMode = switchable ? () => {
+    const nextMode: DisplayMode = displayMode === "standard" ? "oled" : "standard";
+    setDisplayMode(nextMode);
+    // Apply the critical black surface immediately as well as in the effect below.
+    // This avoids a visible one-frame flash and makes the iOS/Safari toggle deterministic.
+    if (theme === "dark") {
+      document.documentElement.classList.toggle("oled", nextMode === "oled");
+      document.body.style.backgroundColor = nextMode === "oled" ? "#000" : "";
+    }
+  } : undefined;
 
   return (
     <ThemeContext.Provider value={{ theme, themePreference, toggleTheme, useSystemTheme, contrastMode, toggleContrastMode, displayMode, toggleOledMode, switchable }}>
