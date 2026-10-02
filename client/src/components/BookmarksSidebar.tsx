@@ -6,6 +6,8 @@ import type { Equipment } from "@/lib/equipmentData";
 import { equipmentImages } from "@/lib/equipmentImages";
 import { getImageBackgroundProfile, getImagePresentation } from "@/lib/equipmentImagePresentation";
 import type { BookmarkImportResult } from "@/hooks/useBookmarks";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocaleCopy } from "@/contexts/localeCopy";
 
 type BookmarksSidebarProps = {
   open: boolean;
@@ -34,6 +36,10 @@ export default function BookmarksSidebar({
   onShareBookmarksPdf,
   onImportBookmarks,
 }: BookmarksSidebarProps) {
+  const { locale } = useLanguage();
+  const copy = getLocaleCopy(locale);
+  const settings = copy.settings;
+  const bookmarks = copy.bookmarks;
   const importInputRef = useRef<HTMLInputElement>(null);
 
   const handleImportChange = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -43,7 +49,7 @@ export default function BookmarksSidebar({
     try {
       await onImportBookmarks(file);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Faylni import qilishda xatolik yuz berdi";
+      const message = err instanceof Error ? err.message : "{settings.importError}";
       toast.error(message);
     }
   };
@@ -62,12 +68,12 @@ export default function BookmarksSidebar({
                 <Heart size={20} fill="currentColor" />
               </span>
               <div>
-                <div className="tech-label text-[#0d7774]">BIO.LAB // SAQLANGANLAR</div>
+                <div className="tech-label text-[#0d7774]">{bookmarks.kicker}</div>
                 <SheetTitle className="display mt-1 text-xl font-bold tracking-[-0.035em] text-[#173d42]">
-                  Saralangan qurilmalar
+                  {bookmarks.title}
                 </SheetTitle>
                 <SheetDescription className="mt-1 text-xs leading-5 text-[#68857f]">
-                  Tez ko‘rish, o‘rganish yoki ro‘yxatdan olib tashlash uchun saqlangan qurilmalar.
+                  {bookmarks.description}
                 </SheetDescription>
               </div>
             </div>
@@ -76,7 +82,7 @@ export default function BookmarksSidebar({
             <div className="flex items-center justify-between gap-3">
               <div>
                 <div className="metric-number text-2xl font-bold text-[#0b6663]">{devices.length}</div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#6f8c86]">saqlangan rekord</div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#6f8c86]">{bookmarks.savedRecord}</div>
               </div>
               {devices.length > 0 && (
                 <button
@@ -84,7 +90,7 @@ export default function BookmarksSidebar({
                   onClick={onClearBookmarks}
                   className="inline-flex items-center gap-1.5 rounded-lg border border-[#c5ddd3] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed]"
                 >
-                  <Trash2 size={13} /> Barchasini tozalash
+                  <Trash2 size={13} /> {bookmarks.clearAll}
                 </button>
               )}
             </div>
@@ -95,7 +101,7 @@ export default function BookmarksSidebar({
                 disabled={devices.length === 0}
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#b8d8ce] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed] disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <FileSpreadsheet size={13} /> CSV eksport
+                <FileSpreadsheet size={13} /> {settings.csvExport}
               </button>
               <button
                 type="button"
@@ -103,7 +109,7 @@ export default function BookmarksSidebar({
                 disabled={devices.length === 0}
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#b8d8ce] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed] disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <FileText size={13} /> PDF eksport
+                <FileText size={13} /> {settings.pdfExport}
               </button>
               <button
                 type="button"
@@ -111,7 +117,7 @@ export default function BookmarksSidebar({
                 disabled={devices.length === 0}
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#b8d8ce] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed] disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <Share2 size={13} /> PDF ulashish
+                <Share2 size={13} /> {settings.sharePdf}
               </button>
               <button
                 type="button"
@@ -119,18 +125,18 @@ export default function BookmarksSidebar({
                 disabled={devices.length === 0}
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#b8d8ce] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed] disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <Download size={13} /> JSON eksport
+                <Download size={13} /> {settings.jsonExport}
               </button>
               <button
                 type="button"
                 onClick={() => importInputRef.current?.click()}
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#b8d8ce] bg-white px-2.5 py-2 text-[11px] font-bold text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#e5f3ed]"
               >
-                <Upload size={13} /> JSON import
+                <Upload size={13} /> {settings.jsonImport}
               </button>
-              <input ref={importInputRef} type="file" accept="application/json,.json" className="sr-only" onChange={handleImportChange} />
+              <input ref={importInputRef} type="file" accept="application/json,.json" aria-label={bookmarks.importInputLabel} className="sr-only" onChange={handleImportChange} />
             </div>
-            <p className="mt-2 text-[10px] leading-4 text-[#6f8c86]">CSV va PDF faqat saralangan qurilmalar haqidagi o‘quv ma’lumotlarini beradi; PDF ulashish qurilmangizning tizim Share oynasini ochadi va maxfiy ma’lumot kiritmaydi.</p>
+            <p className="mt-2 text-[10px] leading-4 text-[#6f8c86]">{bookmarks.note}</p>
           </div>
         </SheetHeader>
 
@@ -140,16 +146,16 @@ export default function BookmarksSidebar({
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#e5f2ed] text-[#0d7774]">
                 <Heart size={25} />
               </span>
-              <h3 className="display mt-5 text-xl font-bold text-[#173d42]">Hozircha saqlangan qurilma yo‘q</h3>
+              <h3 className="display mt-5 text-xl font-bold text-[#173d42]">{bookmarks.emptyTitle}</h3>
               <p className="mt-2 max-w-xs text-sm leading-6 text-[#68857f]">
-                Katalog yoki carousel kartasidagi yurakcha belgisini bosib, tez-tez o‘rganadigan qurilmalaringizni shu yerga saqlang.
+                {bookmarks.emptyDescription}
               </p>
               <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#c9e0d6] bg-[#f1f9f5] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#0d7774]">
-                <BookOpen size={13} /> Katalogdan boshlang
+                <BookOpen size={13} /> {bookmarks.startCatalog}
               </div>
             </div>
           ) : (
-            <div className="space-y-3" role="list" aria-label="Saralangan qurilmalar ro‘yxati">
+            <div className="space-y-3" role="list" aria-label={bookmarks.listLabel}>
               {devices.map((device) => {
                 const image = equipmentImages[device.id];
                 const presentation = getImagePresentation(device.id);
@@ -168,7 +174,7 @@ export default function BookmarksSidebar({
                           onSelectDevice(device);
                         }}
                         className="flex min-w-0 flex-1 items-center gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#0d7774] focus-visible:ring-offset-2"
-                        aria-label={`${device.name} tafsilotlarini ochish`}
+                        aria-label={`${device.name} ${bookmarks.openDetails}`}
                       >
                         <span data-image-profile={imageBackgroundProfile} className={`grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-xl border border-[#dbeae5] ${imageBackgroundProfile === "paper" ? "bg-[#f8fbfa] dark:bg-[#edf4ef]" : imageBackgroundProfile === "ink" ? "bg-[#0a2728] dark:bg-[#061b1c]" : "bg-[#eef7f3] dark:bg-[#102e2e]"}`}>
                           {image ? (
@@ -195,7 +201,7 @@ export default function BookmarksSidebar({
                       <button
                         type="button"
                         onClick={() => onToggleBookmark(device.id)}
-                        aria-label={`${device.name} ni saralanganlardan olib tashlash`}
+                        aria-label={`${device.name} ${bookmarks.remove}`}
                         className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#a9d2c3] bg-[#e8f5ef] text-[#0d7774] transition hover:border-[#0d7774] hover:bg-[#0d7774] hover:text-white"
                       >
                         <Heart size={16} fill="currentColor" />

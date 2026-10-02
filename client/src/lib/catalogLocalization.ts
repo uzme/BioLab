@@ -1,35 +1,62 @@
-import translations from "./generated/catalogTranslations.json";
+import enLocale from "./generated/en.json";
+import ruLocale from "./generated/ru.json";
+import trLocale from "./generated/tr.json";
+import uzLocale from "./generated/uz.json";
 import type { Locale } from "@/contexts/LanguageContext";
 import type { Equipment } from "@/lib/equipmentData";
 import type { LearningContent, PurchaseContent } from "@/lib/learningData";
 
-type TranslationRecord = {
+type LocalizedDevice = {
   id: string;
-  en: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
-  ru: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
-  tr: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
+  equipment: Equipment;
+  learning: Omit<LearningContent, "number" | "sourceKind"> | null;
+  purchase: Omit<PurchaseContent, "number" | "sourceKind"> | null;
 };
 
-const translationMap = new Map((translations as TranslationRecord[]).map((record) => [record.id, record]));
+type LocaleDocument = { devices: LocalizedDevice[] };
+
+const localeDocuments: Record<Locale, LocaleDocument> = {
+  uz: uzLocale as unknown as LocaleDocument,
+  en: enLocale as unknown as LocaleDocument,
+  ru: ruLocale as unknown as LocaleDocument,
+  tr: trLocale as unknown as LocaleDocument,
+};
+
+const deviceMaps: Record<Locale, Map<string, LocalizedDevice>> = {
+  uz: new Map(localeDocuments.uz.devices.map((device) => [device.id, device])),
+  en: new Map(localeDocuments.en.devices.map((device) => [device.id, device])),
+  ru: new Map(localeDocuments.ru.devices.map((device) => [device.id, device])),
+  tr: new Map(localeDocuments.tr.devices.map((device) => [device.id, device])),
+};
 
 export function localizeEquipment(device: Equipment, locale: Locale): Equipment {
-  if (locale === "uz") return device;
-  const record = translationMap.get(device.id)?.[locale];
-  return record ? { ...device, ...record.equipment, id: device.id, number: device.number, model: device.model, models: device.models, brands: device.brands, slug: device.slug } : device;
+  return deviceMaps[locale].get(device.id)?.equipment ?? device;
 }
 
-export function localizeLearning(learning: LearningContent | undefined, deviceId: string, locale: Locale): LearningContent | undefined {
-  if (!learning || locale === "uz") return learning;
-  const translated = translationMap.get(deviceId)?.[locale].learning;
-  return translated ? { ...learning, ...translated, number: learning.number, sourceKind: "learning" } : learning;
+export function localizeLearning(
+  learning: LearningContent | undefined,
+  deviceId: string,
+  locale: Locale,
+): LearningContent | undefined {
+  if (!learning) return undefined;
+  const translated = deviceMaps[locale].get(deviceId)?.learning;
+  return translated
+    ? { ...translated, number: learning.number, sourceKind: "learning" }
+    : learning;
 }
 
-export function localizePurchase(purchase: PurchaseContent | undefined, deviceId: string, locale: Locale): PurchaseContent | undefined {
-  if (!purchase || locale === "uz") return purchase;
-  const translated = translationMap.get(deviceId)?.[locale].purchase;
-  return translated ? { ...purchase, ...translated, number: purchase.number, sourceKind: "purchase" } : purchase;
+export function localizePurchase(
+  purchase: PurchaseContent | undefined,
+  deviceId: string,
+  locale: Locale,
+): PurchaseContent | undefined {
+  if (!purchase) return undefined;
+  const translated = deviceMaps[locale].get(deviceId)?.purchase;
+  return translated
+    ? { ...translated, number: purchase.number, sourceKind: "purchase" }
+    : purchase;
 }
 
-export function getTranslationCoverage() {
-  return translationMap.size;
+export function getTranslationCoverage(locale: Locale = "uz") {
+  return deviceMaps[locale].size;
 }

@@ -43,7 +43,7 @@ await settingsPage.goto(previewUrl, { waitUntil: "networkidle" });
 await settingsPage.locator("[data-lab-entry-action]").click();
 await settingsPage.locator("[data-hero-surface]").waitFor({ state: "visible" });
 await settingsPage.getByRole("button", { name: /Menyuni ochish/i }).click();
-await settingsPage.getByRole("button", { name: /Sozlamalar va Copyright/i }).click();
+await settingsPage.getByRole("button", { name: /Sozlamalar va mualliflik huquqi/i }).click();
 const settingsDialog = settingsPage.getByRole("dialog", { name: /Sozlamalar va huquqiy ma’lumot/i });
 await settingsDialog.waitFor({ state: "visible" });
 assert(await settingsDialog.getByText(/Qat’iy Mualliflik Huquqi/i).isVisible(), "Mobil Copyright modalining kontenti ko‘rinmadi.");
@@ -51,7 +51,7 @@ assert(await settingsDialog.getByText("Mengliyev Bahrom Husanovich", { exact: tr
 const settingsBrand = settingsDialog.locator("[data-settings-brand] img");
 await settingsBrand.waitFor({ state: "visible" });
 const settingsBrandSrc = await settingsBrand.getAttribute("src");
-assert(settingsBrandSrc?.includes("biolab-gold-fullscreen-black"), "Sozlamalardagi to‘liq BioLab emblemi topilmadi.");
+assert(settingsBrandSrc === "/biolab-logo.webp", "Sozlamalardagi to‘liq BioLab emblemi topilmadi.");
 await settingsPage.getByRole("button", { name: /Sozlamalarni yopish/i }).click();
 assert(await settingsDialog.count() === 0, "Mobil Copyright modali yopilmadi.");
 await settingsPage.close();

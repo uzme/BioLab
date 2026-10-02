@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "audit:continuity": "node scripts/release/verify_continuity_docs.mjs",
     "release:check": "node scripts/release/sync_release.mjs --check",
-    "release:publish": "node scripts/release/sync_release.mjs --publish"
+    "release:publish": "node scripts/release/sync_release.mjs --publish",
+    "i18n:validate": "tsx scripts/i18n/validate_locales.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

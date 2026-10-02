@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "path": "/", "title": "BioLab Interactive Guide" },
+    { "path": "/agent", "title": "BioLab Pixel Agent" }
+  ]
+}

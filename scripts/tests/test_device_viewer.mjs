@@ -100,7 +100,7 @@ try {
   await desktop.evaluate(() => window.localStorage.clear());
   await desktop.reload({ waitUntil: "domcontentloaded" });
 
-  await desktop.getByRole("button", { name: "Sozlamalar va Copyright" }).click();
+  await desktop.getByRole("button", { name: "Sozlamalar va mualliflik huquqi" }).click();
   await assert(await desktop.getByRole("heading", { name: "Sozlamalar va huquqiy ma’lumot" }).isVisible(), "Sozlamalar paneli ochilmadi.");
   await desktop.getByRole("button", { name: "Sozlamalarni yopish" }).click();
 

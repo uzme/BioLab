@@ -66,7 +66,7 @@ async function inspectDisplayPreferences() {
   const page = await context.newPage();
   await page.goto(previewUrl, { waitUntil: "networkidle" });
   await page.getByRole("button", { name: "Menyuni ochish" }).click();
-  const settingsTrigger = page.getByRole("button", { name: "Sozlamalar va Copyright" });
+  const settingsTrigger = page.getByRole("button", { name: "Sozlamalar va mualliflik huquqi" });
   await settingsTrigger.waitFor({ state: "visible" });
   await settingsTrigger.click();
   const contrastButton = page.getByRole("button", { name: "Yuqori kontrast rejimini almashtirish" });
@@ -75,7 +75,7 @@ async function inspectDisplayPreferences() {
     active: document.documentElement.classList.contains("high-contrast"),
     stored: localStorage.getItem("biolab-contrast-mode"),
   }));
-  const themeButton = page.getByRole("button", { name: "Rang mavzusini qo‘lda almashtirish" });
+  const themeButton = page.getByRole("button", { name: "Rang mavzusini qo‘lda almashtirish" }).last();
   await themeButton.click();
   const oledButton = page.getByRole("button", { name: "OLED true-black rejimini almashtirish" });
   assert(!(await oledButton.isDisabled()), "OLED true-black boshqaruvi tungi rejimda faollashmadi.");
