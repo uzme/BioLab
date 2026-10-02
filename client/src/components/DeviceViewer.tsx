@@ -31,6 +31,7 @@ import { getImageBackgroundProfile, getImagePresentation } from "@/lib/equipment
 import { loadLearningContent, loadPurchaseContent, resolveDeviceContent } from "@/lib/learningData";
 import type { LearningContent, PurchaseContent } from "@/lib/learningData";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocaleCopy } from "@/contexts/localeCopy";
 import { localizeLearning, localizePurchase } from "@/lib/catalogLocalization";
 
 function SourceText({ value }: { value: string }) {
@@ -60,6 +61,7 @@ async function refreshLearningWorkspace() {
 
 export default function DeviceViewer({ device, onBack, onReady, onSharePdf, onShowQr, completedSections, onSectionRead }: { device: Equipment; onBack: () => void; onReady?: () => void; onSharePdf: (device: Equipment) => void; onShowQr: (device: Equipment) => void; completedSections: number[]; onSectionRead: (deviceId: string, sectionNumber: number) => void }) {
   const { locale } = useLanguage();
+  const copy = getLocaleCopy(locale);
   const [lessonIndex, setLessonIndex] = useState(0);
   const [learning, setLearning] = useState<LearningContent>();
   const [purchase, setPurchase] = useState<PurchaseContent>();
@@ -107,23 +109,23 @@ export default function DeviceViewer({ device, onBack, onReady, onSharePdf, onSh
   const isOfficialImage = image?.sourceType === "official";
 
   const sections = useMemo(() => learning ? [
-    { id: "uz-name", number: 1, title: "Qurilmaning o‘zbekcha nomi", subtitle: "Kanonik atama", icon: BookOpenCheck, content: learning.title },
-    { id: "identity", number: 2, title: "Original nomi, manufacturer va model", subtitle: "Manual qidiruvi uchun", icon: Info, content: `Original nomi / qidiruv nomi: ${learning.originalName}\nManufacturer: ${learning.manufacturer}\nModel: ${learning.model}` },
-    { id: "what-is", number: 3, title: "Qurilma nima?", subtitle: "Aniq, sodda ta’rif", icon: BookMarked, content: learning.whatIs },
-    { id: "what-does", number: 4, title: "Qurilma nima qiladi?", subtitle: "Vazifa va natija", icon: Sparkles, content: learning.whatItDoes },
-    { id: "principle", number: 5, title: "Ishlash prinsipi", subtitle: "Namuna → jarayon → natija", icon: FlaskConical, content: learning.principle },
-    { id: "outcomes", number: 6, title: "Nimalarni o‘rganish mumkin?", subtitle: "Biologik va analitik savollar", icon: GraduationCap, content: learning.learningOutcomes },
-    { id: "parts", number: 7, title: "Qurilmaning asosiy qismlari", subtitle: "Har bir qismning vazifasi", icon: Library, content: learning.mainParts },
-    { id: "sample", number: 8, title: "Namuna tayyorlash", subtitle: "Sifat va ehtiyot choralari", icon: ClipboardCheck, content: learning.samplePreparation },
-    { id: "workflow", number: 9, title: "Qanday ishlatiladi — bosqichma-bosqich", subtitle: "Tasdiqlangan workflow", icon: CheckCircle2, content: learning.workflow },
-    { id: "results", number: 10, title: "Natijani o‘qish va talqin qilish", subtitle: "Raw data, QC va xulosa", icon: BarChart3, content: learning.resultInterpretation },
-    { id: "errors", number: 11, title: "Eng ko‘p uchraydigan xatolar", subtitle: "Oldini olish va tekshirish", icon: AlertTriangle, content: learning.commonMistakes },
-    { id: "safety", number: 12, title: "Xavfsizlik", subtitle: "SOP, PPE va cheklovlar", icon: ShieldCheck, content: learning.safety },
-    { id: "maintenance", number: 13, title: "Tozalash va kundalik xizmat", subtitle: "Ishdan keyingi tartib", icon: Wrench, content: learning.maintenance },
-    { id: "troubleshooting", number: 14, title: "Kalibratsiya va troubleshooting", subtitle: "Muammoni xavfsiz hal qilish", icon: Wrench, content: learning.calibrationTroubleshooting },
-    { id: "practice", number: 15, title: "O‘rganish uchun amaliy mashqlar", subtitle: "Boshlang‘ichdan yuqori darajagacha", icon: GraduationCap, content: learning.practice },
-    { id: "sources", number: 16, title: "Ishonchli o‘quv manbalari", subtitle: "Manual, guide va training", icon: BookMarked, content: "" },
-  ] : [], [learning]);
+    { id: "uz-name", number: 1, title: copy.device.sectionTitles[0], subtitle: copy.device.sectionSubtitles[0], icon: BookOpenCheck, content: learning.title },
+    { id: "identity", number: 2, title: copy.device.sectionTitles[1], subtitle: copy.device.sectionSubtitles[1], icon: Info, content: `${learning.originalName}\n${copy.device.sectionTitles[1]}: ${learning.manufacturer}\n${copy.device.sectionTitles[1]}: ${learning.model}` },
+    { id: "what-is", number: 3, title: copy.device.sectionTitles[2], subtitle: copy.device.sectionSubtitles[2], icon: BookMarked, content: learning.whatIs },
+    { id: "what-does", number: 4, title: copy.device.sectionTitles[3], subtitle: copy.device.sectionSubtitles[3], icon: Sparkles, content: learning.whatItDoes },
+    { id: "principle", number: 5, title: copy.device.sectionTitles[4], subtitle: copy.device.sectionSubtitles[4], icon: FlaskConical, content: learning.principle },
+    { id: "outcomes", number: 6, title: copy.device.sectionTitles[5], subtitle: copy.device.sectionSubtitles[5], icon: GraduationCap, content: learning.learningOutcomes },
+    { id: "parts", number: 7, title: copy.device.sectionTitles[6], subtitle: copy.device.sectionSubtitles[6], icon: Library, content: learning.mainParts },
+    { id: "sample", number: 8, title: copy.device.sectionTitles[7], subtitle: copy.device.sectionSubtitles[7], icon: ClipboardCheck, content: learning.samplePreparation },
+    { id: "workflow", number: 9, title: copy.device.sectionTitles[8], subtitle: copy.device.sectionSubtitles[8], icon: CheckCircle2, content: learning.workflow },
+    { id: "results", number: 10, title: copy.device.sectionTitles[9], subtitle: copy.device.sectionSubtitles[9], icon: BarChart3, content: learning.resultInterpretation },
+    { id: "errors", number: 11, title: copy.device.sectionTitles[10], subtitle: copy.device.sectionSubtitles[10], icon: AlertTriangle, content: learning.commonMistakes },
+    { id: "safety", number: 12, title: copy.device.sectionTitles[11], subtitle: copy.device.sectionSubtitles[11], icon: ShieldCheck, content: learning.safety },
+    { id: "maintenance", number: 13, title: copy.device.sectionTitles[12], subtitle: copy.device.sectionSubtitles[12], icon: Wrench, content: learning.maintenance },
+    { id: "troubleshooting", number: 14, title: copy.device.sectionTitles[13], subtitle: copy.device.sectionSubtitles[13], icon: Wrench, content: learning.calibrationTroubleshooting },
+    { id: "practice", number: 15, title: copy.device.sectionTitles[14], subtitle: copy.device.sectionSubtitles[14], icon: GraduationCap, content: learning.practice },
+    { id: "sources", number: 16, title: copy.device.sectionTitles[15], subtitle: copy.device.sectionSubtitles[15], icon: BookMarked, content: "" },
+  ] : [], [copy, learning]);
 
   const activeSection = sections[lessonIndex] ?? sections[0];
   const completedCount = completedSections.filter((sectionNumber) => sectionNumber >= 1 && sectionNumber <= sections.length).length;
@@ -138,20 +140,20 @@ export default function DeviceViewer({ device, onBack, onReady, onSharePdf, onSh
     if (!isLoading && activeSection) onSectionRead(device.id, activeSection.number);
   }, [activeSection?.number, device.id, isLoading, onSectionRead]);
   const purchaseSections = purchase ? [
-    { value: "price", title: "Narx benchmarki va dalili", content: `${purchase.priceEvidence}\n\nManba: ${purchase.source || "manbada ko‘rsatilgan"}\nHolat: ${purchase.priceStatus || "aniqlanmagan"}` },
-    { value: "buy", title: "Xarid, import va yetkazib berish", content: `${purchase.whereToBuy}\n\n${purchase.purchaseRule}\n\n${purchase.availabilityUz}\n\n${purchase.importInfo}\n\n${purchase.delivery}` },
-    { value: "support", title: "Servis, sarf materiallari va TCO", content: `${purchase.service}\n\n${purchase.spares}\n\n${purchase.tco}\n\n${purchase.redFlags}\n\n${purchase.finalStatus}` },
+    { value: "price", title: copy.device.purchaseTitles[0], content: `${purchase.priceEvidence}\n\nManba: ${purchase.source || "manbada ko‘rsatilgan"}\nHolat: ${purchase.priceStatus || "aniqlanmagan"}` },
+    { value: "buy", title: copy.device.purchaseTitles[1], content: `${purchase.whereToBuy}\n\n${purchase.purchaseRule}\n\n${purchase.availabilityUz}\n\n${purchase.importInfo}\n\n${purchase.delivery}` },
+    { value: "support", title: copy.device.purchaseTitles[2], content: `${purchase.service}\n\n${purchase.spares}\n\n${purchase.tco}\n\n${purchase.redFlags}\n\n${purchase.finalStatus}` },
   ] : [];
 
   return <div data-device-viewer className="min-h-full bg-[#f7fbfa] text-[#173d42]">
     <header data-device-header className="sticky top-0 z-30 border-b border-[#d8e7e3] bg-[#f7fbfa]/95 px-5 py-4 backdrop-blur-xl sm:px-8">
       <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4">
         <button onClick={onBack} className="flex items-center gap-2 text-sm font-bold text-[#126a6a] transition hover:gap-3"><ArrowLeft size={17} /> Barcha uskunalar</button>
-        <div className="hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#6d8b87] sm:flex"><BookOpenCheck size={15} /> 16 bo‘limli o‘quv markazi</div>
+        <div className="hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#6d8b87] sm:flex"><BookOpenCheck size={15} /> {copy.device.learningCenter}</div>
         <div className="flex items-center gap-3">
-          <button onClick={() => onShowQr(device)} className="grid h-8 w-8 place-items-center rounded-xl border border-[#a9cfc4] bg-white text-[#0d7774] transition hover:bg-[#e8f6f0]" title="Qurilma QR-kodini ochish" aria-label="Qurilma QR-kodini ochish"><QrCode size={16} /></button>
-          <button onClick={() => onSharePdf(device)} className="flex items-center gap-2 rounded-xl border border-[#0d7774] bg-[#0d7774] px-3.5 py-1.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#075e5c]" title="Qurilma PDF dosyesini ulashish"><FileDown size={15} /> PDFni ulashish</button>
-          <div className="rounded-full border border-[#b7d6ca] bg-white px-3 py-1.5 text-xs font-bold text-[#126a6a]">{learning ? `${completedCount} / 16` : "Yuklanmoqda…"}</div>
+          <button onClick={() => onShowQr(device)} className="grid h-8 w-8 place-items-center rounded-xl border border-[#a9cfc4] bg-white text-[#0d7774] transition hover:bg-[#e8f6f0]" title={copy.device.openQr} aria-label={copy.device.openQr}><QrCode size={16} /></button>
+          <button onClick={() => onSharePdf(device)} className="flex items-center gap-2 rounded-xl border border-[#0d7774] bg-[#0d7774] px-3.5 py-1.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#075e5c]" title={copy.device.sharePdf}><FileDown size={15} /> {copy.device.sharePdf}</button>
+          <div className="rounded-full border border-[#b7d6ca] bg-white px-3 py-1.5 text-xs font-bold text-[#126a6a]">{learning ? `${completedCount} / 16` : copy.device.loading}</div>
         </div>
       </div>
     </header>

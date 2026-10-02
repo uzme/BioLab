@@ -7,6 +7,7 @@ type TranslationRecord = {
   id: string;
   en: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
   ru: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
+  tr: { equipment: Partial<Equipment>; learning: Partial<LearningContent> | null; purchase: Partial<PurchaseContent> | null };
 };
 
 const translationMap = new Map((translations as TranslationRecord[]).map((record) => [record.id, record]));

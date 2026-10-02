@@ -1,25 +1,26 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-export type Locale = "uz" | "en" | "ru";
+export type Locale = "uz" | "en" | "ru" | "tr";
 
 export const localeOptions: Array<{ value: Locale; label: string; nativeLabel: string }> = [
   { value: "uz", label: "O‘zbekcha", nativeLabel: "O‘zbekcha" },
   { value: "en", label: "English", nativeLabel: "English" },
   { value: "ru", label: "Русский", nativeLabel: "Русский" },
+  { value: "tr", label: "Türkçe", nativeLabel: "Türkçe" },
 ];
 
 const categoryLabels: Record<string, Record<Locale, string>> = {
-  "Barcha uskunalar": { uz: "Barcha uskunalar", en: "All equipment", ru: "Все установки" },
-  "Molekulyar biologiya": { uz: "Molekulyar biologiya", en: "Molecular biology", ru: "Молекулярная биология" },
-  "Mikroskopiya": { uz: "Mikroskopiya", en: "Microscopy", ru: "Микроскопия" },
-  "Hujayra kulturalari": { uz: "Hujayra kulturalari", en: "Cell culture", ru: "Культура клеток" },
-  "Mikrobiologiya": { uz: "Mikrobiologiya", en: "Microbiology", ru: "Микробиология" },
-  "Analitika": { uz: "Analitika", en: "Analytics", ru: "Аналитика" },
-  "Sentrifugatsiya": { uz: "Sentrifugatsiya", en: "Centrifugation", ru: "Центрифугирование" },
-  "Bioreaktorlar": { uz: "Bioreaktorlar", en: "Bioreactors", ru: "Биореакторы" },
-  "Sovutish va saqlash": { uz: "Sovutish va saqlash", en: "Cooling and storage", ru: "Охлаждение и хранение" },
-  "Namuna tayyorlash": { uz: "Namuna tayyorlash", en: "Sample preparation", ru: "Подготовка образцов" },
-  "Avtomatlashtirish": { uz: "Avtomatlashtirish", en: "Automation", ru: "Автоматизация" },
+  "Barcha uskunalar": { uz: "Barcha uskunalar", en: "All equipment", ru: "Все установки", tr: "Tüm cihazlar" },
+  "Molekulyar biologiya": { uz: "Molekulyar biologiya", en: "Molecular biology", ru: "Молекулярная биология", tr: "Moleküler biyoloji" },
+  "Mikroskopiya": { uz: "Mikroskopiya", en: "Microscopy", ru: "Микроскопия", tr: "Mikroskopi" },
+  "Hujayra kulturalari": { uz: "Hujayra kulturalari", en: "Cell culture", ru: "Культура клеток", tr: "Hücre kültürü" },
+  "Mikrobiologiya": { uz: "Mikrobiologiya", en: "Microbiology", ru: "Микробиология", tr: "Mikrobiyoloji" },
+  "Analitika": { uz: "Analitika", en: "Analytics", ru: "Аналитика", tr: "Analitik" },
+  "Sentrifugatsiya": { uz: "Sentrifugatsiya", en: "Centrifugation", ru: "Центрифугирование", tr: "Santrifüjleme" },
+  "Bioreaktorlar": { uz: "Bioreaktorlar", en: "Bioreactors", ru: "Биореакторы", tr: "Biyoreaktörler" },
+  "Sovutish va saqlash": { uz: "Sovutish va saqlash", en: "Cooling and storage", ru: "Охлаждение и хранение", tr: "Soğutma ve depolama" },
+  "Namuna tayyorlash": { uz: "Namuna tayyorlash", en: "Sample preparation", ru: "Подготовка образцов", tr: "Numune hazırlama" },
+  "Avtomatlashtirish": { uz: "Avtomatlashtirish", en: "Automation", ru: "Автоматизация", tr: "Otomasyon" },
 };
 
 export function getCategoryLabel(category: string, locale: Locale) {
@@ -146,6 +147,45 @@ export const uiText = {
     safariInstallHint: "Установите через меню Share в Safari",
     dismiss: "Закрыть",
   },
+  tr: {
+    language: "Dil",
+    languageDescription: "Arayüz ve PDF dilini seçin.",
+    author: "Yazar: Mengliyev Bahrom",
+    systemTagline: "TÜRKÇE BİYOTEKNOLOJİ SİSTEMİ",
+    allEquipment: "Tüm cihazlar",
+    navigation: "Navigasyon",
+    searchPlaceholder: "Cihaz, model veya kullanım amacına göre arayın…",
+    modelFilter: "Model / marka filtresi",
+    openSettings: "Ayarlar",
+    settings: "Ayarlar ve yasal bilgiler",
+    pixelAgent: "Pixel Agent",
+    enterLab: "Laboratuvara gir",
+    loading: "Yükleniyor…",
+    pdfPreparing: "PDF dosyası hazırlanıyor…",
+    pdfDownloaded: "PDF cihaza indirildi.",
+    pdfShare: "PDF’yi paylaş",
+    pdfDownload: "PDF’yi dışa aktar",
+    scanDetail: "Ayrıntı görünümü için tarayın",
+    exportDate: "Dışa aktarma tarihi",
+    dossier: "BIO.LAB / BİREYSEL ÖĞRENME DOSYASI",
+    continuation: "DEVAMI",
+    sixteenSections: "16 BÖLÜMLÜ SOP",
+    originalName: "Özgün ad",
+    manufacturer: "Üretici",
+    model: "Model",
+    module: "Satın alma ve işletme maliyetleri",
+    searchSuggestions: "Hızlı öneriler",
+    activeFilters: "Etkin filtreler",
+    clearFilter: "Filtreyi kaldır",
+    results: "sonuç",
+    progress: "Yerel öğrenme ilerlemeniz",
+    myLab: "Laboratuvarım",
+    installApp: "BioLab’ı uygulama olarak yükleyin",
+    installAppDescription: "Safari’de Paylaş → Ana Ekrana Ekle → Web Uygulaması Olarak Aç seçeneklerini seçin.",
+    installAppAction: "Yükleme adımlarını görüntüle",
+    safariInstallHint: "Safari Paylaş menüsünden yükleyin",
+    dismiss: "Kapat",
+  },
 } as const;
 
 type LanguageContextValue = {
@@ -159,7 +199,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 function readInitialLocale(): Locale {
   if (typeof window === "undefined") return "uz";
   const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  return stored === "en" || stored === "ru" || stored === "uz" ? stored : "uz";
+  return stored === "en" || stored === "ru" || stored === "uz" || stored === "tr" ? stored : "uz";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

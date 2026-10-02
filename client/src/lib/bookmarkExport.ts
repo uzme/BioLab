@@ -17,7 +17,7 @@ function getPdfPalette(theme: PdfTheme): PdfPalette {
     ? { page: rgb(0.015, 0.035, 0.04), entryEven: rgb(0.045, 0.105, 0.11), entryOdd: rgb(0.035, 0.075, 0.08), border: rgb(0.17, 0.43, 0.4), header: rgb(0.01, 0.08, 0.085), accent: rgb(0.57, 0.91, 0.83), heading: rgb(0.91, 0.98, 0.95), body: rgb(0.76, 0.88, 0.84), muted: rgb(0.61, 0.77, 0.72) }
     : { page: rgb(1, 1, 1), entryEven: rgb(0.95, 0.98, 0.97), entryOdd: rgb(1, 1, 1), border: rgb(0.78, 0.88, 0.84), header: rgb(0.02, 0.16, 0.16), accent: rgb(0.57, 0.91, 0.83), heading: rgb(0.05, 0.24, 0.25), body: rgb(0.27, 0.44, 0.42), muted: rgb(0.33, 0.48, 0.45) };
 }
-const EXPORT_DATE_LOCALES: Record<Locale, string> = { uz: "uz-UZ", en: "en-US", ru: "ru-RU" };
+const EXPORT_DATE_LOCALES: Record<Locale, string> = { uz: "uz-UZ", en: "en-US", ru: "ru-RU", tr: "tr-TR" };
 
 function formatExportDate(date: Date, locale: Locale) {
   return new Intl.DateTimeFormat(EXPORT_DATE_LOCALES[locale], { day: "2-digit", month: "long", year: "numeric" }).format(date);
@@ -76,7 +76,7 @@ function triggerDownload(blob: Blob, filename: string) {
 }
 
 function drawPdfHeader(page: PDFPage, bold: PDFFont, regular: PDFFont, deviceCount: number, exportedAt: Date, palette: PdfPalette, locale: Locale) {
-  const copy = locale === "en" ? { eyebrow: "BIO.LAB / BOOKMARKS", title: "Bookmarked equipment", count: "equipment" } : locale === "ru" ? { eyebrow: "BIO.LAB / СОХРАНЁННЫЕ", title: "Сохранённые установки", count: "установок" } : { eyebrow: "BIO.LAB / SARALANGANLAR", title: "Saralangan qurilmalar ro‘yxati", count: "ta qurilma" };
+  const copy = locale === "en" ? { eyebrow: "BIO.LAB / BOOKMARKS", title: "Bookmarked equipment", count: "equipment" } : locale === "ru" ? { eyebrow: "BIO.LAB / СОХРАНЁННЫЕ", title: "Сохранённые установки", count: "установок" } : locale === "tr" ? { eyebrow: "BIO.LAB / YER İŞARETLİLERİ", title: "İşaretli cihazlar", count: "cihaz" } : { eyebrow: "BIO.LAB / SARALANGANLAR", title: "Saralangan qurilmalar ro‘yxati", count: "ta qurilma" };
   page.drawRectangle({ x: 0, y: PDF_PAGE_HEIGHT - 116, width: PDF_PAGE_WIDTH, height: 116, color: palette.header });
   page.drawText(toPdfText(copy.eyebrow), { x: PDF_MARGIN, y: PDF_PAGE_HEIGHT - 48, size: 9, font: bold, color: palette.accent });
   page.drawText(toPdfText(copy.title), { x: PDF_MARGIN, y: PDF_PAGE_HEIGHT - 78, size: 19, font: bold, color: palette.heading });
