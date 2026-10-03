@@ -1,7 +1,7 @@
 # BioLab Complete Handoff
 
-**Snapshot:** 2026-10-02 22:44 +05:00  
-**Release commit:** `a5240a0` — `fix: unify locale translations and mobile UI flows`
+**Snapshot:** 2026-10-04
+**Release scope:** Tasdiqlangan Scientific Editorial Dashboard dizayni asosiy loyihaga birlashtirildi.
 
 ## Included
 
@@ -11,28 +11,43 @@
   - `client/src/lib/generated/en.json`
   - `client/src/lib/generated/ru.json`
   - `client/src/lib/generated/tr.json`
-- Production build output under `dist/`
-- Translation/UI/UX audit report under `docs/reports/`
-- Test and validation scripts
+- Translation/UI/UX audit reports under `docs/reports/`
+- Approved design specification: `docs/reports/DESIGN_APPROVED_2026-10-04.md`
+- Bookmark Sheet light/dark and mobile layout fixes
 - WebDev route manifest and project logo metadata
+- Test and validation scripts
+
+## Latest changes
+
+- Scientific Editorial Dashboard visual layer added to `client/src/index.css`.
+- Bookmark Sheet theme mixing, mobile overflow, safe-area and overlay z-index issues fixed.
+- Bookmark import error fallback corrected from a literal string to `settings.importError`.
+- Sheet overlay now exposes `data-sheet-overlay` for scoped styling.
+- Device data, learning data and all four locale JSON files were preserved unchanged.
 
 ## Validation
 
 - TypeScript check: passed
 - Production build: passed
-- Unit tests: 26 passed
-- Browser/regression tests: passed
-- BIO-001–BIO-100 learning audit: passed
-- Every locale: 100 devices, 16 learning sections, 4 learning stages
+- `git diff --check`: passed
+- Locale/data integrity: passed
+
+The build may report the existing large JavaScript chunk advisory; it does not fail the build.
 
 ## Connected services
 
 - GitHub: https://github.com/uzme/BioLab
 - Vercel project: `biolab`
 - Vercel production domain: https://biolab-interactive-guide.vercel.app
-- Manus Preview: https://8328-id8thaqh8zu27g4r63913-1a846102.us4.manus.computer/
 - Google Drive folder: https://drive.google.com/drive/folders/19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV
+
+## Restore and run
+
+```bash
+pnpm install --frozen-lockfile --ignore-scripts
+pnpm run dev
+```
 
 ## Excluded from this handoff archive
 
-Dependency caches (`node_modules`), Git internals (`.git`), temporary Manus logs, and local runtime caches are excluded. Dependencies can be restored with `pnpm install --frozen-lockfile --ignore-scripts`.
+`node_modules`, `dist`, `.git`, temporary Manus logs and local runtime caches are excluded. Dependencies and build output can be restored with the commands above and `pnpm run build`.

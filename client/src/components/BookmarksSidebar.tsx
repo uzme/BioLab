@@ -49,7 +49,7 @@ export default function BookmarksSidebar({
     try {
       await onImportBookmarks(file);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "{settings.importError}";
+      const message = err instanceof Error ? err.message : settings.importError;
       toast.error(message);
     }
   };
