@@ -16,6 +16,7 @@
 - Bookmark Sheet light/dark and mobile layout fixes
 - WebDev route manifest and project logo metadata
 - Test and validation scripts
+- Next handoff creation guide: `HANDOFF_NEXT_ZIP_INSTRUCTIONS.md`
 
 ## Latest changes
 
@@ -29,6 +30,7 @@
 
 - TypeScript check: passed
 - Production build: passed
+- Full regression suite: passed (26 unit tests plus browser/device audits)
 - `git diff --check`: passed
 - Locale/data integrity: passed
 
@@ -48,6 +50,12 @@ pnpm install --frozen-lockfile --ignore-scripts
 pnpm run dev
 ```
 
-## Excluded from this handoff archive
+For a new handoff ZIP, follow `HANDOFF_NEXT_ZIP_INSTRUCTIONS.md`. Never delete an older handoff before verifying the new ZIP with `zip -T`.
 
-`node_modules`, `dist`, `.git`, temporary Manus logs and local runtime caches are excluded. Dependencies and build output can be restored with the commands above and `pnpm run build`.
+## Archive variants
+
+A source-only archive excludes `dist` and dependency caches. A `_FULL` archive includes the current production `dist` build as well. Both variants include the source, data, translations and handoff instructions.
+
+## Excluded from source-only archive
+
+`node_modules`, `dist`, `.git`, temporary Manus logs and local runtime caches are excluded from the source-only archive. The FULL archive includes `dist` but still excludes dependency caches and Git internals.
