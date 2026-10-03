@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from "react";
+import { useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { ChevronLeft, ChevronRight, FlaskConical, Heart, Pause, Play } from "lucide-react";
 import { equipment, type Equipment } from "@/lib/equipmentData";
 import { equipmentImages } from "@/lib/equipmentImages";
@@ -8,6 +8,7 @@ import "./Pure3DCarousel.css";
 type CarouselStyle = CSSProperties & {
   "--n"?: number;
   "--i"?: number;
+  "--rotation"?: string;
 };
 
 type Pure3DCarouselProps = {
@@ -19,9 +20,32 @@ type Pure3DCarouselProps = {
 export default function Pure3DCarousel({ onSelectDevice, isBookmarked, onToggleBookmark }: Pure3DCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [manualRotation, setManualRotation] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragRef = useRef({ startX: 0, startRotation: 0, moved: false });
   const pageSize = 12;
   const totalPages = Math.ceil(equipment.length / pageSize);
   const pageEquipment = equipment.slice(currentIndex * pageSize, (currentIndex + 1) * pageSize);
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    dragRef.current = { startX: event.clientX, startRotation: manualRotation, moved: false };
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setIsDragging(true);
+    setIsPaused(true);
+  };
+
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    const deltaX = event.clientX - dragRef.current.startX;
+    if (Math.abs(deltaX) > 4) dragRef.current.moved = true;
+    setManualRotation(dragRef.current.startRotation + deltaX * 0.45);
+  };
+
+  const handlePointerEnd = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    setIsDragging(false);
+  };
 
   return (
     <section
@@ -41,7 +65,7 @@ export default function Pure3DCarousel({ onSelectDevice, isBookmarked, onToggleB
         <div className="carousel-controls flex items-center gap-2">
           <button
             type="button"
-            onClick={() => setCurrentIndex((page) => Math.max(0, page - 1))}
+            onClick={() => { setCurrentIndex((page) => Math.max(0, page - 1)); setManualRotation(0); }}
             disabled={currentIndex === 0}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#b8d8cc] bg-white text-[#0d7774] shadow-sm transition hover:bg-[#e7f5f1] disabled:cursor-not-allowed disabled:opacity-40"
             title="Oldingi sahifa"
@@ -54,7 +78,7 @@ export default function Pure3DCarousel({ onSelectDevice, isBookmarked, onToggleB
           </span>
           <button
             type="button"
-            onClick={() => setCurrentIndex((page) => Math.min(totalPages - 1, page + 1))}
+            onClick={() => { setCurrentIndex((page) => Math.min(totalPages - 1, page + 1)); setManualRotation(0); }}
             disabled={currentIndex === totalPages - 1}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#b8d8cc] bg-white text-[#0d7774] shadow-sm transition hover:bg-[#e7f5f1] disabled:cursor-not-allowed disabled:opacity-40"
             title="Keyingi sahifa"
@@ -76,8 +100,8 @@ export default function Pure3DCarousel({ onSelectDevice, isBookmarked, onToggleB
       </div>
 
       {pageEquipment.length > 0 ? (
-        <div className="scene" aria-live="polite" data-carousel-scene>
-          <div className={`a3d ${isPaused ? "is-paused" : ""}`} style={{ "--n": pageEquipment.length } as CarouselStyle}>
+        <div className="scene" aria-live="polite" data-carousel-scene onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerEnd} onPointerCancel={handlePointerEnd} style={{ cursor: isDragging ? "grabbing" : "grab" }}>
+          <div className={`a3d ${isPaused ? "is-paused" : ""} ${manualRotation !== 0 ? "is-manual" : ""}`} style={{ "--n": pageEquipment.length, "--rotation": `${manualRotation}deg` } as CarouselStyle}>
             {pageEquipment.map((device, index) => {
               const image = equipmentImages[device.id];
               const imagePresentation = getImagePresentation(device.id);
@@ -92,7 +116,7 @@ export default function Pure3DCarousel({ onSelectDevice, isBookmarked, onToggleB
                   style={{ "--i": index } as CarouselStyle}
                   role="group"
                   tabIndex={0}
-                  onClick={() => onSelectDevice(device)}
+                  onClick={() => { if (dragRef.current.moved) { dragRef.current.moved = false; return; } onSelectDevice(device); }}
                   onKeyDown={(event) => {
                     if (event.target !== event.currentTarget) return;
                     if (event.key === "Enter" || event.key === " ") {

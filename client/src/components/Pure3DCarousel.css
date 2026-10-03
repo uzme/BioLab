@@ -158,6 +158,8 @@
   to { rotate: y 1turn; }
 }
 
+.pure3d-carousel .a3d.is-manual { animation: none; transform: rotateY(var(--rotation, 0deg)); }
+
 .pure3d-carousel .a3d.is-paused,
 .pure3d-carousel[data-carousel-motion="paused"] .a3d,
 .pure3d-carousel .scene:hover .a3d,
