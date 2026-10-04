@@ -43,7 +43,7 @@ BioLabning joriy production hostingi, GitHub ulanishi va tiklash uchun ishlatila
 - Vercel production deployment shu commitdan qurilgan va `READY` holatda.
 - Production URL va deployment URL `200` qaytardi.
 - PWA manifest `standalone` rejimini qaytardi.
-- Handoff ZIP hajmi `104821628` bytes, MD5 `5452bae0162e000a2c80723812e6867c`.
+- Handoff ZIP checksumi Drive file metadata’da tashqi ravishda tekshiriladi; checksum ZIP ichiga self-reference sababli kiritilmaydi.
 - ZIP MD5 Drive’dagi file metadata bilan mos.
 
 ## Qat’iy qoida

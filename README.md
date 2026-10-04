@@ -10,9 +10,9 @@ The active canonical source repository is [`uzme/BioLab`](https://github.com/uzm
 
 - Production website: https://biolab-interactive-guide.vercel.app/
 - Vercel project: `biolab`, latest production deployment `READY`
-- Current GitHub commit: `b67ca811e240257110b353e6d3800ade9cacca1c`
+- Current GitHub commit: `11dae1f6970a6fc923c954fd85611d68e8422266`
 - Current Drive handoff: `BioLab_Handoff_2026-10-04_13-56.zip`, file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`
-- Drive handoff MD5: `5452bae0162e000a2c80723812e6867c`
+- Drive handoff checksum: Drive file metadata orqali tashqi verifikatsiya qilinadi.
 
 ## Tech Stack
 

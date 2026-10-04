@@ -6,7 +6,7 @@ Ushbu hujjat protokol talabiga binoan GitHub ↔ Google Drive cross-linking va b
 
 | Asset | Purpose | Drive Folder | Actual Drive URL / ID | File Type | Version | Date | Canonical Source | Used By |
 |---|---|---|---|---|---|---|---|---|
-| `BioLab_Handoff_2026-10-04_13-56.zip` | Complete BioLab source, build and handoff snapshot | `Biotexnologiya` BioLab Root (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) | ID: `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`; modified: `2026-10-04T08:56:47.636Z`; MD5: `5452bae0162e000a2c80723812e6867c` | ZIP Archive (.zip) | GitHub `main` `b67ca81` | 2026-10-04 | User handoff archive | BioLab archive; rootda bitta active handoff snapshot |
+| `BioLab_Handoff_2026-10-04_13-56.zip` | Complete BioLab source, build and handoff snapshot | `Biotexnologiya` BioLab Root (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) | ID: `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`; modified va checksum Drive metadata’da tashqi verifikatsiya qilinadi | ZIP Archive (.zip) | GitHub `main` `11dae1f` | 2026-10-04 | User handoff archive | BioLab archive; rootda bitta active handoff snapshot |
 | `BioLab_Interactive_Guide_images.zip` | Equipment images reference archive | `Biotexnologiya` BioLab Root (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) | ID: `1QuDHKjR8FuMz72en8wjOudrk1Quj0dqk` | ZIP Archive (.zip) | v1.0.0 | 2026-08-16 | Static Asset Vault | BioLab Equipment Catalog & Carousel |
 | Uploaded Master Protocols | Master protocol reference texts | `Biotexnologiya` BioLab Root (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) | Sandbox Local Uploads | Markdown (.md) | v1.0.0 | 2026-08-17 | User Uploads | Audit & Continuity Workflow |
 

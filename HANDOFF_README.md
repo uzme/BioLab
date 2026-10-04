@@ -39,12 +39,12 @@ The build may report the existing large JavaScript chunk advisory; it does not f
 ## Connected services
 
 - GitHub: https://github.com/uzme/BioLab
-- GitHub `main` commit: `b67ca811e240257110b353e6d3800ade9cacca1c`
+- GitHub `main` commit: `11dae1f6970a6fc923c954fd85611d68e8422266`
 - Vercel project: `biolab`
 - Vercel production domain: https://biolab-interactive-guide.vercel.app (`READY`, deployment `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY`)
 - Google Drive folder: https://drive.google.com/drive/folders/19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV
 - Google Drive archive: `BioLab_Handoff_2026-10-04_13-56.zip` (`1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`)
-- Archive MD5: `5452bae0162e000a2c80723812e6867c`
+- Archive checksum: Drive file metadata’da tashqi ravishda tekshiriladi; checksum ZIP ichiga self-reference sababli joylashtirilmaydi.
 
 ## Restore and run
 
