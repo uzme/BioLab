@@ -50,11 +50,11 @@ node scripts/release/sync_release.mjs --check
 node scripts/release/sync_release.mjs --publish
 ```
 
-`gws` upload validatsiyasi snapshot fayli turgan katalogdan bajarilishini talab qiladi; `scripts/release/sync_release.mjs` buni avtomatik boshqaradi. `.env*`, tokenlar, API kalitlar, parollar, PATlar, runtime loglar, dependency va build kataloglari snapshotga kiritilmaydi. Snapshot nomi `BioLab_Interactive_Guide_source.tar.gz`; skript avval shu nomdagi mavjud faylni faqat `Biotexnologiya yangi` BioLab root ichidan qidiradi va mavjud bo‘lsa yangilaydi.
+`gws` upload validatsiyasi snapshot fayli turgan katalogdan bajarilishini talab qiladi; `scripts/release/sync_release.mjs` buni avtomatik boshqaradi. `.env*`, tokenlar, API kalitlar, parollar, PATlar, runtime loglar, dependency va build kataloglari snapshotga kiritilmaydi. Snapshot nomi `BioLab_Interactive_Guide_source.tar.gz`; skript avval shu nomdagi mavjud faylni faqat `Biotexnologiya` BioLab root ichidan qidiradi va mavjud bo‘lsa yangilaydi.
 
 ## 6. GitHub Sync Xatosi
 
-BioLab arxivi `uzme/biolab-interactive-guide` repository `main` branchining rootiga yuboriladi. `gh auth status` bilan GitHub CLI autentifikatsiyasini tekshiring. Release script pushdan oldin typecheck, build, regressiya testlari va secret scan bajaradi. Boshqa repository yoki Drive papkasi amaldagi source-of-truth sync manzili sifatida ishlatilmaydi.
+BioLab arxivi `uzme/BioLab` repository `main` branchining rootiga yuboriladi. `gh auth status` bilan GitHub CLI autentifikatsiyasini tekshiring. Release script pushdan oldin typecheck, build, regressiya testlari va secret scan bajaradi. Boshqa repository yoki Drive papkasi amaldagi source-of-truth sync manzili sifatida ishlatilmaydi.
 
 ## 7. Maxfiy Ma’lumotlar Bo‘yicha Xavfsizlik
 

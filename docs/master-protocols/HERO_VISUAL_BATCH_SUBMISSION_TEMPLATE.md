@@ -1,6 +1,6 @@
 # BioLab Hero Batch — Yetkazib Berish Shabloni
 
-Ushbu shablon boshqa akkaunt yoki tashqi AI yaratgan hero-vizual batchini asosiy BioLab agentiga xatosiz topshirish uchun ishlatiladi. Rasmlar **faqat** mavjud canonical Drive root — `Biotexnologiya yangi` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) — ichiga yuklanadi. Yangi papka, kod repositorysi yoki Drive root yaratilmaydi.
+Ushbu shablon boshqa akkaunt yoki tashqi AI yaratgan hero-vizual batchini asosiy BioLab agentiga xatosiz topshirish uchun ishlatiladi. Rasmlar **faqat** mavjud canonical Drive root — `Biotexnologiya` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) — ichiga yuklanadi. Yangi papka, kod repositorysi yoki Drive root yaratilmaydi.
 
 ## Batch qoidasi
 

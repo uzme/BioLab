@@ -35,11 +35,11 @@ Arxivni qayta tuzish uchun `scripts/utils/build_ordered_hero_recovery_archive.mj
 
 | Resurs | Qiymat |
 |---|---|
-| Drive root | `Biotexnologiya yangi` — `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` |
+| Drive root | `Biotexnologiya` — `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` |
 | Recovery arxiv nomi | `BioLab_Hero_Assets_Recovery.tar.gz` |
 | Recovery arxiv ID | `1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08` |
 | Tekshirilgan versiya | `2026-08-21T10:05:02.918Z`; `32,579,873` bayt; SHA-256 `65ecd99d527d681d9e9952e1b352e3a8e193768b8445445b69d3cf65c607f914` |
-| Bevosita Drive mirror | `Biotexnologiya yangi/BioLab_Hero_Assets_By_Batch` — ID `1i3CwBud6QOyWMlEyitXSFm4vD_5jd9ar` |
+| Bevosita Drive mirror | `Biotexnologiya/BioLab_Hero_Assets_By_Batch` — ID `1i3CwBud6QOyWMlEyitXSFm4vD_5jd9ar` |
 | Mirror qamrovi | 100 batch papka, 100 ta tekshirilgan WebP, `BATCH_INDEX.md`, checksum manifest |
 
 > Arxivning file IDsi o‘zgarmaydi: yangi versiya shu faylning o‘rniga yoziladi. Bu qoida rasmlar tarqalib ketishi yoki duplicate paydo bo‘lishining oldini oladi.

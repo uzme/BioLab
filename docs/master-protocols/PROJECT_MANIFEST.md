@@ -8,8 +8,8 @@ BioLab Interactive Guide — 100 ta biotexnologiya qurilmasini 10 kategoriya va 
 |---|---|
 | Project name | BioLab Interactive Guide |
 | Current version | `1.0.0` |
-| Verified application/source release | GitHub `uzme/biolab-interactive-guide` `main` repository root; final commit recorded after release verification |
-| Deployment | Manus Autoscale Web Hosting — `https://biolabguide-fbcitqyf.manus.space` |
+| Verified application/source release | GitHub `uzme/BioLab` `main` repository root; final commit recorded after release verification |
+| Deployment | Vercel project `biolab` — `https://biolab-interactive-guide.vercel.app` (`READY`) |
 | Language | Professional Uzbek (`uz`) |
 | Archive status | Sanitised canonical archive workflow verified; final archive commit and Drive modified time are recorded by each release run and state metadata |
 
@@ -53,7 +53,7 @@ docs/         Project reference documentation, when present
 
 ## Canonical Archive
 
-- **GitHub:** `https://github.com/uzme/biolab-interactive-guide`, branch `main`, project path repository root.
-- **Google Drive:** BioLab `Biotexnologiya yangi` root ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`; canonical snapshot ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, file name `BioLab_Interactive_Guide_source.tar.gz`.
+- **GitHub:** `https://github.com/uzme/BioLab`, branch `main`, project path repository root.
+- **Google Drive:** BioLab `Biotexnologiya` root ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`; canonical snapshot ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, file name `BioLab_Interactive_Guide_source.tar.gz`.
 - **Cross-links:** `DRIVE_INDEX.md`, `GITHUB_INDEX.md`, and `RESTORATION_MAP.md`.
-- **Excluded locations:** only the canonical `Biotexnologiya yangi` BioLab root is used; `Second Brain`, `Kodlar`, `PUBG`, and `Skills` Drive folders are not modified.
+- **Excluded locations:** only the canonical `Biotexnologiya` BioLab root is used; `Second Brain`, `Kodlar`, `PUBG`, and `Skills` Drive folders are not modified.

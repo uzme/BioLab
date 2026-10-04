@@ -6,7 +6,7 @@ BioLab Interactive Guide is a professional Uzbek-language learning platform for 
 
 ## Current Source of Truth
 
-The working project at `/home/ubuntu/biolab-guide` is the source of truth during development. The sanitised archival copy is stored at the root of the `uzme/biolab-interactive-guide` GitHub repository. The only Drive destination for release snapshots is the BioLab **Biotexnologiya yangi** root folder with ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`. The separate `Second Brain` root is never a BioLab write destination.
+The working project at `/home/ubuntu/biolab-guide` is the source of truth during development. The sanitised archival copy is stored at the root of the `uzme/BioLab` GitHub repository. The only Drive destination for release snapshots is the BioLab **Biotexnologiya** root folder with ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`. The separate `Second Brain` root is never a BioLab write destination.
 
 ## Current Verified State
 
@@ -27,15 +27,15 @@ In accordance with the **GitHub + Google Drive Continuity & Reproducibility Mast
 ### Version Identification
 - **Project Version:** 1.0.0 (Canonical stable release)
 - **Git Branch:** `main`
-- **GitHub Repository:** `https://github.com/uzme/biolab-interactive-guide`
-- **Google Drive Root Folder:** `Biotexnologiya yangi` (ID: `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`)
+- **GitHub Repository:** `https://github.com/uzme/BioLab`
+- **Google Drive Root Folder:** `Biotexnologiya` (ID: `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`)
 - **Canonical Drive Snapshot:** `BioLab_Interactive_Guide_source.tar.gz`
 - **Synchronization State:** `READY` (Verified via `verify_continuity_docs.mjs` and `sync_release.mjs --check`)
 
 ### Clean-Clone and Reproduction Workflow
 A clean archive clone must be installed and verified from the repository root:
 ```bash
-git clone https://github.com/uzme/biolab-interactive-guide.git biolab-guide
+git clone https://github.com/uzme/BioLab.git biolab-guide
 cd biolab-guide
 pnpm install --frozen-lockfile --ignore-scripts
 pnpm run check
@@ -48,7 +48,7 @@ node scripts/release/sync_release.mjs --check
 Secrets are supplied only through an untracked local environment or hosting secret manager; `.env*`, tokens, API keys, passwords, PATs, service-role keys, logs, dependency directories, and build outputs are strictly excluded from GitHub and Google Drive release snapshots.
 
 ### Synchronization Execution
-From the working project, use `node scripts/release/sync_release.mjs --check` before `node scripts/release/sync_release.mjs --publish`. The release script re-runs verification, scans source files for common secret formats, pushes the verified BioLab repository root to `uzme/biolab-interactive-guide` `main`, and updates `BioLab_Interactive_Guide_source.tar.gz` in the Biotexnologiya Drive root without creating duplicate superseded files.
+From the working project, use `node scripts/release/sync_release.mjs --check` before `node scripts/release/sync_release.mjs --publish`. The release script re-runs verification, scans source files for common secret formats, pushes the verified BioLab repository root to `uzme/BioLab` `main`, and updates `BioLab_Interactive_Guide_source.tar.gz` in the Biotexnologiya Drive root without creating duplicate superseded files.
 
 ## Development Rules
 

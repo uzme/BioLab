@@ -26,23 +26,23 @@
 - iPhone Safari’da detail oynaning avvalgi “Xarid” bo‘limidan ochilib qolishi bartaraf etildi: mobilga bitta scroll konteyner qoldirildi, yangi qurilma ochilganda reset paintdan oldin, keyingi frame’da va iOS renderi barqarorlashgach takrorlanadi.
 - DeviceViewer endi o‘quv va xarid bloklarini mustaqil yuklaydi; xarid ma’lumotidagi alohida muammo o‘quv dosyesi va 16 bo‘lim ochilishini to‘sib qo‘ymaydi. 100 ta BIO detail uchun dinamik ma’lumotlar unit test bilan qamrab olindi.
 - Purchase-loader recovery dalili alohida unit regression orqali tekshirildi: purchase promise rad etilganda `resolveDeviceContent` 16-bo‘limli learning dosyesini saqlaydi. Production smoke-test ataylab nosozlik kiritmaydi va faqat real learning/purchase success-path yuklanishini tasdiqlaydi.
-- Foydalanuvchi tasdig‘i bilan eski Vercel `biolab-interactive-guide` Git avtomatik deploy bog‘lanishi uzildi. Uchta tarixiy Vercel aliasi canonical emas deb belgilandi; post-check Git bog‘lanishi qaytmaganini tasdiqladi. Tiklash va production uchun faqat GitHub `main` hamda Manus manzili ishlatiladi.
-- Foydalanuvchining alohida keyingi tasdig‘i bilan eski Vercel `biolab-interactive-guide` loyihasi butunlay o‘chirildi. Read-only loyiha so‘rovi `404 Not Found`, uchta tarixiy aliasning barchasi `404`, canonical Manus production manzili esa `200` qaytardi.
+- 2026-08-22 tarixiy hosting auditida avvalgi Vercel ulanishi vaqtincha ajratilgan deb qayd etilgan; bu holat keyinchalik yangi `biolab` Vercel projecti bilan almashtirildi.
+- 2026-10-04 holatiga ko‘ra `uzme/BioLab` `main` branchi Vercel `biolab` projectiga ulangan, `https://biolab-interactive-guide.vercel.app/` production aliasi `200` qaytaradi va deployment `READY`.
 
 ## [1.0.1] — 2026-08-20
 
 ### Corrected
-- BioLabning canonical Google Drive rooti metadata va inventar orqali `Biotexnologiya yangi` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida tasdiqlandi. Alohida `Second Brain` rooti BioLab release oqimidan chiqarildi.
+- BioLabning canonical Google Drive rooti metadata va inventar orqali `Biotexnologiya` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida tasdiqlandi. Alohida `Second Brain` rooti BioLab release oqimidan chiqarildi.
 
 ## [1.0.0] — 2026-08-17
 
 ### Verified
-- Canonical repository is confirmed as `uzme/biolab-interactive-guide`, and the canonical BioLab Google Drive root folder is confirmed as `Biotexnologiya yangi` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`).
+- Canonical repository is confirmed as `uzme/BioLab`, and the canonical BioLab Google Drive root folder is confirmed as `Biotexnologiya` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`).
 - `useTransition` race conditions in catalog search, filter clearing, category selection, and empty-state handling were successfully stabilized with Playwright assertion synchronization.
 - TypeScript checks, production builds, catalog controls, DeviceViewer, 16-section learning dossiers, carousel/pagination, and mobile menu regression tests passed successfully.
 - PWA offline shell, service worker, loading/ripple animations, bookmarks sidebar, and original horizontal Pure CSS 3D carousel geometry were verified.
 - AI Project GitHub + Google Drive Continuity Master Protocol and restoration mapping documentation suite were successfully aligned.
-- Sanitised release targets `uzme/biolab-interactive-guide` main branch and the `Biotexnologiya yangi` BioLab root on Google Drive. Secrets, tokens, API keys, passwords, PATs, `node_modules`, `dist`, and logs remain excluded.
+- Sanitised release targets `uzme/BioLab` main branch and the `Biotexnologiya` BioLab root on Google Drive. Secrets, tokens, API keys, passwords, PATs, `node_modules`, `dist`, and logs remain excluded.
 
 ## [1.0.0] — 2026-08-16
 

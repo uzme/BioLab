@@ -204,3 +204,5 @@
 - [x] 2026-09-27: Safari/PWA install onboarding va offline status ko‘rsatmasini localization bilan qo‘shish.
 - [x] 2026-09-27: Birinchi bosqich uchun typecheck, build, unit/browser regressiya va production smoke auditini bajarish.
 - [x] 2026-09-27: OLED true-black toggle DOM rangini state effectdan oldin sinxron qo‘llash va release regressionini qayta PASS qilish.
+
+- [x] 2026-10-04: Handoff hujjatlari va release canonical ma’lumotlarini uzme/BioLab, Vercel production va Biotexnologiya Drive rootiga moslab yangilash.

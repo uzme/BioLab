@@ -2,7 +2,7 @@
 
 ## 2026-08-21 authoritative joriy holat — avval o‘qing
 
-Quyidagi eski 33/100 va 67 ta qolgan qamrov yozuvlari **tarixiy kontekst** bo‘lib, keyingi ishlar uchun manba emas. Canonical `Biotexnologiya yangi` Drive rootidagi mavjud ZIP batchlar read-only auditdan o‘tkazildi: 76 ta ZIP integrity tekshiruvdan o‘tdi, 85 ta noyob `2560×1440` WebP aniqlandi va keyingi authoritative duplicate variantlar tanlandi. Batch 13 ichidagi `BIO-041.webp` ham integrity, model mosligi va visual standartdan **PASS** oldi. Auditdan o‘tgan 85 ta yangi WebP hamda avvalgi 15 ta qabul qilingan hero bilan katalogda **100 / 100** qurilma `cover` + `laboratory` profilida ishlaydi.
+Quyidagi eski 33/100 va 67 ta qolgan qamrov yozuvlari **tarixiy kontekst** bo‘lib, keyingi ishlar uchun manba emas. Canonical `Biotexnologiya` Drive rootidagi mavjud ZIP batchlar read-only auditdan o‘tkazildi: 76 ta ZIP integrity tekshiruvdan o‘tdi, 85 ta noyob `2560×1440` WebP aniqlandi va keyingi authoritative duplicate variantlar tanlandi. Batch 13 ichidagi `BIO-041.webp` ham integrity, model mosligi va visual standartdan **PASS** oldi. Auditdan o‘tgan 85 ta yangi WebP hamda avvalgi 15 ta qabul qilingan hero bilan katalogda **100 / 100** qurilma `cover` + `laboratory` profilida ishlaydi.
 
 | Joriy holat | Qamrov | Amal |
 |---|---:|---|
@@ -90,4 +90,4 @@ Keyin mobil light/dark ko‘rinishda kamida yangi qo‘shilgan assetlardan birin
 
 ## Xavfsizlik va sinxronlash qoidalari
 
-`.env`, token, API key, parol, browser loglari va runtime chiqindilarini hech qachon GitHub yoki Drive snapshotiga kiritmang. Release faqat mavjud master skript orqali amalga oshiriladi; u GitHub `uzme/biolab-interactive-guide` `main` branchiga va mavjud canonical Google Drive snapshotiga yuboradi. Yangi Drive root yoki duplicate papka yaratmang. `todo.md` hamda `docs/master-protocols/PROJECT_STATE.md` ga har bir muhim batchning qamrovi va sinov holatini yozib boring.
+`.env`, token, API key, parol, browser loglari va runtime chiqindilarini hech qachon GitHub yoki Drive snapshotiga kiritmang. Release faqat mavjud master skript orqali amalga oshiriladi; u GitHub `uzme/BioLab` `main` branchiga va mavjud canonical Google Drive snapshotiga yuboradi. Yangi Drive root yoki duplicate papka yaratmang. `todo.md` hamda `docs/master-protocols/PROJECT_STATE.md` ga har bir muhim batchning qamrovi va sinov holatini yozib boring.

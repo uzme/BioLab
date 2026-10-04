@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
 
-const DRIVE_REMOTE = process.env.BIOLAB_DRIVE_REMOTE ?? "manus_google_drive:Biotexnologiya yangi";
+const DRIVE_REMOTE = process.env.BIOLAB_DRIVE_REMOTE ?? "manus_google_drive:Biotexnologiya";
 const RCLONE_CONFIG = process.env.BIOLAB_RCLONE_CONFIG ?? "/home/ubuntu/.gdrive-rclone.ini";
 const OUTPUT_PATH = process.env.BIOLAB_AUDIT_OUTPUT
   ?? "/home/ubuntu/biolab-guide/docs/reports/hero-drive-asset-audit.json";

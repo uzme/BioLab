@@ -73,7 +73,7 @@ const manifest = {
   purpose:
     "BioLab qabul qilingan hero-vizuallarini recovery uchun aniqlash; barcha fayl baytlari canonical Drive arxivida, runtime nusxalari project asset storage’da saqlanadi.",
   canonicalDriveRoot: {
-    name: "Biotexnologiya yangi",
+    name: "Biotexnologiya",
     id: "19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV",
   },
   recoveryArchive: {

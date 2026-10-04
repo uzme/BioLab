@@ -8,8 +8,8 @@ Ushbu audit BioLab Interactive Guide loyihasining yagona GitHub repositorysi, ya
 
 | Qatlam | Tekshirilgan manzil | Natija |
 |---|---|---|
-| GitHub source | `https://github.com/uzme/biolab-interactive-guide`, `main`, repository root | PASS |
-| Google Drive archive | `Biotexnologiya yangi` BioLab root, ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` | PASS |
+| GitHub source | `https://github.com/uzme/BioLab`, `main`, repository root | PASS |
+| Google Drive archive | `Biotexnologiya` BioLab root, ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` | PASS |
 | Snapshot | `BioLab_Interactive_Guide_source.tar.gz`, mavjud faylni joyida yangilash | PASS |
 | Cross-links | `GITHUB_INDEX.md`, `DRIVE_INDEX.md`, `RESTORATION_MAP.md` | PASS |
 | Required documents | 20 ta continuity hujjati va LICENSE/CONTRIBUTING/SECURITY | PASS |
@@ -33,6 +33,6 @@ Production bundle ichidagi learning dossier ma’lumotlari 500 kB dan katta inte
 
 ## Status qarori
 
-Continuity auditning joriy holati: **READY**. Yakuniy publishdan keyin GitHub commit hash’i, Drive snapshot file ID si, modified time va source fingerprint `PROJECT_STATE.md`, `CURRENT_STATE.md`, `GITHUB_INDEX.md`, `DRIVE_INDEX.md` va ushbu hujjatda bir xil metadata sifatida qayd etiladi. Faqat canonical GitHub repository va `Biotexnologiya yangi` BioLab root papkasi write destination hisoblanadi; `Second Brain` va boshqa Drive papkalari o‘zgartirilmaydi.
+Continuity auditning joriy holati: **READY**. Yakuniy publishdan keyin GitHub commit hash’i, Drive snapshot file ID si, modified time va source fingerprint `PROJECT_STATE.md`, `CURRENT_STATE.md`, `GITHUB_INDEX.md`, `DRIVE_INDEX.md` va ushbu hujjatda bir xil metadata sifatida qayd etiladi. Faqat canonical GitHub repository va `Biotexnologiya` BioLab root papkasi write destination hisoblanadi; `Second Brain` va boshqa Drive papkalari o‘zgartirilmaydi.
 
 2026-08-20 verified release metadata: GitHub commit `de9eea4287e5f85a4b959e5bd01bc42e38f7e1d1`; Drive snapshot `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`; parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`; modified `2026-08-20T06:24:25.426Z`; source fingerprint `d273b32f213065204bde5f49e5a059b05401eb21dfd56546f06ed63da0e21f95`.

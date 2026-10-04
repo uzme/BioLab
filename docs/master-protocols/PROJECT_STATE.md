@@ -6,10 +6,10 @@
 |---|---|
 | Web loyiha | BioLab Interactive Guide |
 | Oxirgi checkpoint | `88285285`; OLED true-black hotfixi va manual sync metadata relizi productionda jonli |
-| Canonical GitHub | `https://github.com/uzme/biolab-interactive-guide`, `main`; qo‘lda, force-pushsiz yuborilgan sync metadata checkpoint `88285285` |
-| Canonical Google Drive | **Biotexnologiya yangi** BioLab root, ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`; canonical snapshot ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, version `234`, modified `2026-08-27T20:04:09.793Z`, size `34,244,857` byte |
+| Canonical GitHub | `https://github.com/uzme/BioLab`, `main`; qo‘lda, force-pushsiz yuborilgan sync metadata checkpoint `88285285` |
+| Canonical Google Drive | **Biotexnologiya** BioLab root, ID `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`; canonical snapshot ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, version `234`, modified `2026-08-27T20:04:09.793Z`, size `34,244,857` byte |
 | Joriy snapshot nomi | `BioLab_Interactive_Guide_source.tar.gz` |
-| Ishlab chiqarish manzili | Canonical: `https://biolabguide-fbcitqyf.manus.space` |
+| Ishlab chiqarish manzili | Canonical: `https://biolab-interactive-guide.vercel.app` |
 | Qamrov | 10 kategoriya, 100 qurilma, 16 bo‘limli o‘quv tarkibi |
 | Joriy audit | DeviceViewerning yuqori QR tugmasi dialogi statik tayyor holatda; sidebar va Sozlamalardagi brend belgisi to‘liq oltin BioLab emblemiga o‘tkazildi. PDF eksportlari aktiv tema palitrasiga moslashadi; Sozlamalarda yuqori-kontrast va OLED true-black tanlovlari browser xotirasida saqlanadi. OLED hotfixi keyingi gradientlarni bekor qilib, hujjat fonini haqiqiy `#000`ga mustahkamlaydi. TypeScript check, production build, 25 ta Vitest, barcha browser regressiyalari va BIO-001–BIO-100 o‘quv auditi PASS. Canonical GitHub va mavjud Drive snapshot foydalanuvchi tasdiqlagan qo‘lda sync bilan yangilandi; archive SHA-256 byte-darajasida tekshirildi. |
 
@@ -27,9 +27,9 @@ Snapshot `git archive` orqali `88285285` checkpointidan yaratildi va `.env*`, `.
 
 ## 2026-08-28 Qo‘lda GitHub va Google Drive sinxronlashi
 
-Foydalanuvchining aniq tasdig‘idan so‘ng canonical GitHub `uzme/biolab-interactive-guide` repositorysining `main` tarmog‘i **force-pushsiz** fast-forward bilan `b91e91236f01b231b055d67c1576d59152f89b48` dan production release `23b0a0ec9b442bd09b70f19be234f2240e6d2231` gacha yuborildi. Yuklashdan avval ishchi daraxt tozaligi, diff whitespace tekshiruvi va remote divergensiyasi ko‘rib chiqildi; 13 ta commit oldinga, remote tomonda qarama-qarshi commit yo‘qligi tasdiqlandi.
+Foydalanuvchining aniq tasdig‘idan so‘ng canonical GitHub `uzme/BioLab` repositorysining `main` tarmog‘i **force-pushsiz** fast-forward bilan `b91e91236f01b231b055d67c1576d59152f89b48` dan production release `23b0a0ec9b442bd09b70f19be234f2240e6d2231` gacha yuborildi. Yuklashdan avval ishchi daraxt tozaligi, diff whitespace tekshiruvi va remote divergensiyasi ko‘rib chiqildi; 13 ta commit oldinga, remote tomonda qarama-qarshi commit yo‘qligi tasdiqlandi.
 
-Google Drive’da duplicate fayl yoki papka yaratilmadi. Mavjud **`BioLab_Interactive_Guide_source.tar.gz`** snapshot (`1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`) aynan o‘zida yangilandi va uning parent’i canonical **Biotexnologiya yangi BioLab root** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida saqlandi. Sanitizatsiyalangan archive `git archive` asosida release commitdan hosil qilindi: 398 manba/hujjat fayli kiritildi, `.env*`, `.project-config.json`, `.git`, `dist`, `node_modules` va `.manus-logs` yo‘llari soni **0**.
+Google Drive’da duplicate fayl yoki papka yaratilmadi. Mavjud **`BioLab_Interactive_Guide_source.tar.gz`** snapshot (`1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`) aynan o‘zida yangilandi va uning parent’i canonical **Biotexnologiya BioLab root** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida saqlandi. Sanitizatsiyalangan archive `git archive` asosida release commitdan hosil qilindi: 398 manba/hujjat fayli kiritildi, `.env*`, `.project-config.json`, `.git`, `dist`, `node_modules` va `.manus-logs` yo‘llari soni **0**.
 
 Archive SHA-256: `0746962c6d0f186a91ba954be0b61c72faa6e8d5ba34fc7df3d2ddd4b2209eef`. Drive’dan qayta olingan 34,240,644-byte nusxa ayni SHA-256ga ega va byte-darajasida `cmp` orqali tengligi tasdiqlandi. Drive fayli version `229`, MD5 `1d0078fd0397a6855e14afb2b3312ff7`, modified `2026-08-27T19:34:52.292Z`. Holat: **manual sync PASS**.
 
@@ -101,7 +101,7 @@ Dalillar: 1280×720 desktop va 390×844 mobil vizual audit, TypeScript check, pr
 
 ## 2026-08-25 Pixel Agent va Vercel mirror — tekshirildi
 
-Vercel loyihasi foydalanuvchi talabi bilan yana faol mirror sifatida saqlanadi; u canonical Manus host o‘rnini bosmaydi. Vite client outputi `dist/public` ekanligi audit qilindi va `vercel.json`ga aynan shu output katalogi hamda SPA catch-all rewrite qo‘shildi. `a6e09e2295eacb81525fbf9d1e5647bfcbd16f52` GitHub `main` commitidan yaratilgan `dpl_BRNRMPW9J1YWwdvJwcM1gtPeseS6` branch deploymenti **READY** holatiga yetdi; uning `https://biolab-interactive-guide-git-main-bahroms-projects-fade24c3.vercel.app/agent` manzili Live Lab gate va `/agent` SPA marshrutini HTTP 200 bilan berdi. Vercel asset mirrorida 100 ta qurilma, logo hamda Live Lab rasmlari source-controlled local fayllardan yuklanadi.
+Vercel mirror loyihasi foydalanuvchi talabi bilan o‘sha checkpointda faol saqlangan. Vite client outputi `dist/public` ekanligi audit qilindi va `vercel.json`ga aynan shu output katalogi hamda SPA catch-all rewrite qo‘shildi. `a6e09e2295eacb81525fbf9d1e5647bfcbd16f52` GitHub `main` commitidan yaratilgan `dpl_BRNRMPW9J1YWwdvJwcM1gtPeseS6` branch deploymenti **READY** holatiga yetdi; uning `https://biolab-interactive-guide-git-main-bahroms-projects-fade24c3.vercel.app/agent` manzili Live Lab gate va `/agent` SPA marshrutini HTTP 200 bilan berdi. Joriy canonical production esa `https://biolab-interactive-guide.vercel.app/` bo‘lib, Vercel `biolab` projectiga tegishli.
 
 Tarixiy GitHub manbasida mavjud, ammo canonical daraxtga kelmagan Pixel Agent moduli qayta yaratilmadi: u lokal `equipment` katalogida deterministic qidiruv va javob generatori, unit test hamda `/agent` route bilan minimal qayta tiklandi. Agent tarmoq, API, backend, secret yoki LLM ishlatmaydi; normal `/agent` tashrifi ham Live Lab kirish ekranidan o‘tadi. Vercel browser smoke tekshiruvida gate’dan keyin Pixel Agent workspace, local/offline indikatorlari, tezkor so‘rovlar hamda katalogga qaytish havolasi ko‘rindi.
 
@@ -131,7 +131,7 @@ Dalillar: 390×844 telefon viewporti vizual auditi, TypeScript check, 13 Vitest,
 
 ## 2026-08-24 Expo Go original runtime va laboratoriya kirish ekrani
 
-Expo Go’dagi dastlabki React Native katalog ilovasi original BioLab web UX’ini faqat o‘xshatma tarzida qayta yaratgani uchun foydalanuvchi talab qilgan dizayn tengligiga erishmadi. U o‘rniga Expo SDK 54 qobig‘iga `react-native-webview` kiritildi va qobiq faqat canonical `https://biolabguide-fbcitqyf.manus.space/` runtime’ini ochadigan qilib cheklab qo‘yildi. Shu bilan BioLabning original headeri, hero kompozitsiyasi, 100 ta rasmli qurilma kartasi, filter drawer, saralanganlar, 16 bo‘limli detail, tema hamda CSV/PDF funksiyalari Expo Go ichida aynan webdagidek ishlaydi. Tashqi havolalar ilova tashqarisida ochiladi.
+Expo Go’dagi dastlabki React Native katalog ilovasi original BioLab web UX’ini faqat o‘xshatma tarzida qayta yaratgani uchun foydalanuvchi talab qilgan dizayn tengligiga erishmadi. U o‘rniga Expo SDK 54 qobig‘iga `react-native-webview` kiritildi va qobiq faqat canonical `https://biolab-interactive-guide.vercel.app/` runtime’ini ochadigan qilib cheklab qo‘yildi. Shu bilan BioLabning original headeri, hero kompozitsiyasi, 100 ta rasmli qurilma kartasi, filter drawer, saralanganlar, 16 bo‘limli detail, tema hamda CSV/PDF funksiyalari Expo Go ichida aynan webdagidek ishlaydi. Tashqi havolalar ilova tashqarisida ochiladi.
 
 Canonical homepage dizayni saqlangan. Endi Expo Go qobig‘i va oddiy BioLab sayti ochilishida, original hero sahifasidan avval `Laboratoriyani jonli boshqaring.` nomli kirish kadri chiqadi: u mavjud tasdiqlangan BioLab laboratorya hero rasmiga yengil grid, skan chizig‘i, DNA signal, holat indikatori va `NAMUNA → TAHLIL → NATIJA` oqimini qo‘llaydi. `Laboratoriyaga kirish` tugmasi 260 ms kirish transitionidan so‘ng o‘zgartirilmagan original asosiy sahifani ochadi. `prefers-reduced-motion` bo‘lganda barcha non-essential animatsiyalar amalda to‘xtaydi.
 
@@ -153,9 +153,9 @@ Export faqat foydalanuvchi tanlagan saralangan qurilmalarning o‘quv katalogi m
 
 ## 2026-08-24 Yakuniy loyiha closeout holati
 
-BioLab Interactive Guide manba kodi, testlari, master-protokollari, vizual auditlari va qayta tiklash hujjatlari yakuniy release tarkibiga tayyor. Qamrov 100 ta biotexnologik qurilma, 16 bo‘limli o‘quv dosyelari, PWA/offline oqimi, lokal saralanganlar, kun/tun mavzusi, reduced-motion qo‘llovi hamda CSV/PDF eksportini o‘z ichiga oladi. Canonical public host `https://biolabguide-fbcitqyf.manus.space/` `assets/index-C0nLhziA.js` bundleini va `CSV eksport` markerini qaytardi; HTTP `Last-Modified` qiymati `2026-08-24T09:02:07Z` bo‘lib, export relizi productionda jonli ekanini tasdiqladi.
+BioLab Interactive Guide manba kodi, testlari, master-protokollari, vizual auditlari va qayta tiklash hujjatlari yakuniy release tarkibiga tayyor. Qamrov 100 ta biotexnologik qurilma, 16 bo‘limli o‘quv dosyelari, PWA/offline oqimi, lokal saralanganlar, kun/tun mavzusi, reduced-motion qo‘llovi hamda CSV/PDF eksportini o‘z ichiga oladi. Canonical public host `https://biolab-interactive-guide.vercel.app/` `assets/index-C0nLhziA.js` bundleini va `CSV eksport` markerini qaytardi; HTTP `Last-Modified` qiymati `2026-08-24T09:02:07Z` bo‘lib, export relizi productionda jonli ekanini tasdiqladi.
 
-Yakuniy archive faqat `uzme/biolab-interactive-guide` repositorysining `main` branchiga va mavjud `BioLab_Interactive_Guide_source.tar.gz` Drive snapshotiga yuboriladi. Release skripti `.env*`, `.project-config.json`, tokenlarga o‘xshash qiymatlar, runtime loglar, build chiqindilari, lokal dependency hamda eski arxivlarni chiqarib tashlaydi; snapshot mavjud Drive faylini duplikatsiz o‘rnida yangilaydi. Yakuniy sanitizatsiyalangan fingerprint `1ac1d3ab499a3118fda9bcbed159078cbcfb9d9bf68ba4a9eae43f3724857c14`; GitHub `main` commit `fde6a503d359cd823976b85bbf9fad011b97e5e0`; Drive snapshot 2026-08-24T09:16:14.165Z da mavjud faylda yangilandi. Holat: **READY**.
+Yakuniy archive faqat `uzme/BioLab` repositorysining `main` branchiga va mavjud `BioLab_Interactive_Guide_source.tar.gz` Drive snapshotiga yuboriladi. Release skripti `.env*`, `.project-config.json`, tokenlarga o‘xshash qiymatlar, runtime loglar, build chiqindilari, lokal dependency hamda eski arxivlarni chiqarib tashlaydi; snapshot mavjud Drive faylini duplikatsiz o‘rnida yangilaydi. Yakuniy sanitizatsiyalangan fingerprint `1ac1d3ab499a3118fda9bcbed159078cbcfb9d9bf68ba4a9eae43f3724857c14`; GitHub `main` commit `fde6a503d359cd823976b85bbf9fad011b97e5e0`; Drive snapshot 2026-08-24T09:16:14.165Z da mavjud faylda yangilandi. Holat: **READY**.
 
 ## 2026-08-23 To‘liq mobil landing redesign releasei
 
@@ -191,9 +191,9 @@ BIO-001–BIO-100 detail oqimi desktop va iPhone Safari 390×844 emulyatsiyasida
 
 Loader recovery qamrovi alohida browser regression bilan kengaytirildi: learning bloki sun’iy xato qaytarganda foydalanuvchi `O‘quv dosyesi yuklanmadi` hamda `Yangilash va qayta ochish` tugmasini ko‘radi; purchase bloki xato qaytarganda esa 16 bo‘limli o‘quv dosyesi ochiq qoladi. Offline reload assertioni app shell tiklanishini kutadigan qilib barqarorlashtirildi. Ma’lumotlar tarkibi va UI funksionalligi o‘zgartirilmagan; faqat audit/test qamrovi kengaytirildi.
 
-TypeScript check, production build, lokal to‘liq test zanjiri va canonical Manus production URL’da 100/100 detail audit muvaffaqiyatli yakunlandi. Holat: **READY**.
+TypeScript check, production build, lokal to‘liq test zanjiri va canonical production URL’da 100/100 detail audit muvaffaqiyatli yakunlandi. Holat: **READY**.
 
-100/100 detail va loader recovery regressiyalari GitHub `uzme/biolab-interactive-guide` `main` branchiga kiritildi. GWS OAuth tokeni vaqtincha eskirganda release to‘xtab qolmasligi uchun `sync_release.mjs`ga rclone fallback qo‘shildi va uning alohida regression kontrakti tekshirildi. Foydalanuvchi qayta autentifikatsiyasidan so‘ng existing canonical snapshot metadata’si yana ochildi va duplicate yaratilmasdan o‘rnida yangilandi.
+100/100 detail va loader recovery regressiyalari GitHub `uzme/BioLab` `main` branchiga kiritildi. GWS OAuth tokeni vaqtincha eskirganda release to‘xtab qolmasligi uchun `sync_release.mjs`ga rclone fallback qo‘shildi va uning alohida regression kontrakti tekshirildi. Foydalanuvchi qayta autentifikatsiyasidan so‘ng existing canonical snapshot metadata’si yana ochildi va duplicate yaratilmasdan o‘rnida yangilandi.
 
 Yakuniy tasdiqlangan release: GitHub `main` commit `f5604692620fa87212b34d245cdadb15ac9b0c57`; sanitizatsiyalangan source fingerprint `38ceca30724cb7b4eb5080b35268bcbe2149b2229d98a4d91c87a413a128990d`; Drive snapshot `BioLab_Interactive_Guide_source.tar.gz`, ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-22T05:13:06.698Z`, transport `gws`. Holat: **READY**.
 
@@ -201,15 +201,15 @@ Yakuniy tasdiqlangan release: GitHub `main` commit `f5604692620fa87212b34d245cda
 
 `node scripts/release/sync_release.mjs --publish` typecheck, production build, Vitest, katalog/DeviceViewer browser regressiyalari, continuity audit va secret-sanitizatsiyani muvaffaqiyatli tugatdi. Sanitizatsiyalangan source fingerprint: `9d2716739a85f6bf1f6bf59e5cc8d6e34967e68ed0981de1019b30661d4435c4`.
 
-Tekshirilgan kod GitHub `uzme/biolab-interactive-guide` `main` branchiga `790c81404427f7bc05e1c11030c18bc66c2f642d` commit bilan yuborildi. Mavjud canonical Drive snapshoti duplicate yaratmasdan o‘rnida yangilandi: `BioLab_Interactive_Guide_source.tar.gz`, file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-22T03:45:53.993Z`. Holat: **READY**.
+Tekshirilgan kod GitHub `uzme/BioLab` `main` branchiga `790c81404427f7bc05e1c11030c18bc66c2f642d` commit bilan yuborildi. Mavjud canonical Drive snapshoti duplicate yaratmasdan o‘rnida yangilandi: `BioLab_Interactive_Guide_source.tar.gz`, file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-22T03:45:53.993Z`. Holat: **READY**.
 
-## 2026-08-22 Vercel butunlay o‘chirildi va canonical hosting qoidasi
+## 2026-10-04 Vercel production va canonical hosting yangilanishi
 
-Vercel’dagi avvalgi `biolab-interactive-guide` loyihasi tarixan `uzme/biolab-interactive-guide` repositorysi bilan bog‘langan va uchta alias yaratgan edi: `biolab-interactive-guide.vercel.app`, `biolab-interactive-guide-bahroms-projects-fade24c3.vercel.app` hamda `biolab-interactive-guide-git-main-bahroms-projects-fade24c3.vercel.app`. Avval foydalanuvchi tasdig‘i bilan Git integratsiyasi uzildi; undan keyingi ikki haqiqiy `main` pushdan keyin Vercel deployment history’da `0` ta yangi deploy qaytdi.
+Vercel project `biolab` GitHub `uzme/BioLab` repositorysi bilan `main` branch orqali ulangan. Production alias `https://biolab-interactive-guide.vercel.app/` bo‘lib, joriy deployment `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY` `READY` holatida.
 
-Keyingi aniq tasdiq bilan eski Vercel loyihasining o‘zi ham butunlay o‘chirildi. Read-only Vercel API orqali `biolab-interactive-guide` slugiga yuborilgan so‘rov `404 Not Found` qaytardi. Mustaqil HTTP tekshiruvi uchala tarixiy alias uchun `404`, `https://biolabguide-fbcitqyf.manus.space/` uchun esa `200` holatini qayd etdi.
+Deployment metadata GitHub commit `b67ca811e240257110b353e6d3800ade9cacca1c` bilan mos. Mustaqil HTTP tekshiruvida production alias `200` qaytardi va PWA manifest `display: standalone` qiymatini berdi.
 
-BioLab uchun yagona canonical live manzil: `https://biolabguide-fbcitqyf.manus.space/`. Vercel aliaslari, Vercel deployi va Vercel restore targeti mavjud emas. Boshqa akkauntdagi tiklash oqimi faqat `https://github.com/uzme/biolab-interactive-guide` repositorysining `main` branchidan hamda yuqoridagi canonical Manus manzilidan foydalanadi. Batafsil post-delete dalili `docs/reports/VERCEL_HOSTING_LINK_INVENTORY.md`da saqlangan.
+BioLab uchun yagona canonical live manzil: `https://biolab-interactive-guide.vercel.app/`. Boshqa akkauntdagi tiklash oqimi `https://github.com/uzme/BioLab` repositorysining `main` branchidan, `Biotexnologiya` Drive rootidan va yuqoridagi Vercel production manzilidan foydalanadi. Batafsil dalil `docs/reports/VERCEL_HOSTING_LINK_INVENTORY.md`da saqlangan.
 
 ## Repository Structure (Tartiblangan papka tuzilmasi)
 - `client/` — React 19 frontend, shadcn/ui komponentlar, custom hooks (`useBookmarks`), PWA offline qo‘llab-quvvatlashi
@@ -225,7 +225,7 @@ BioLab uchun yagona canonical live manzil: `https://biolabguide-fbcitqyf.manus.s
 - `shared/` — Umumiy turlar va xatoliklar aniqlamalari
 
 ## Sinxronlash qoidasi
-Tekshirilgan kod va hujjatlar faqat GitHub `uzme/biolab-interactive-guide` repositorysining `main` branch rootiga va Google Drive’dagi yagona **Biotexnologiya yangi** BioLab root papkasiga yuboriladi. Drive root ID: `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`. `Second Brain` root BioLab release manzili emas. `.env` fayllari, tokenlar, API kalitlari va runtime chiqindilari snapshotga kiritilmaydi.
+Tekshirilgan kod va hujjatlar faqat GitHub `uzme/BioLab` repositorysining `main` branch rootiga va Google Drive’dagi yagona **Biotexnologiya** BioLab root papkasiga yuboriladi. Drive root ID: `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`. `Second Brain` root BioLab release manzili emas. `.env` fayllari, tokenlar, API kalitlari va runtime chiqindilari snapshotga kiritilmaydi.
 
 
 ## 2026-08-18 script organization release audit
@@ -254,17 +254,17 @@ Continuation prompt qayta yozildi: boshqa akkauntdagi agentning roli **faqat** m
 
 ## 2026-08-20 Drive root va hero batch auditi
 
-Drive metadata va fayl inventari BioLabning yagona canonical rootini **Biotexnologiya yangi** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida tasdiqladi: unda `BioLab_Interactive_Guide_source.tar.gz`, beshta hero batch va Biotexnologiya qurilma auditlari mavjud. Avvalgi `1ZWf2MrB1FDN1PmcX9-e1sHrbx4X2QxQd` root esa `Second Brain` loyihasiga tegishli ekanligi aniqlandi; BioLab release skriptlari va continuity hujjatlari unga yozmaydigan qilib tuzatildi.
+Drive metadata va fayl inventari BioLabning yagona canonical rootini **Biotexnologiya** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`) sifatida tasdiqladi: unda `BioLab_Interactive_Guide_source.tar.gz`, beshta hero batch va Biotexnologiya qurilma auditlari mavjud. Avvalgi `1ZWf2MrB1FDN1PmcX9-e1sHrbx4X2QxQd` root esa `Second Brain` loyihasiga tegishli ekanligi aniqlandi; BioLab release skriptlari va continuity hujjatlari unga yozmaydigan qilib tuzatildi.
 
 `BioLab_hero_assets_batch_01.zip`–`05.zip` ichidagi 24 ta WebP rasm auditidan keyin 17 ta mos hero-vizual media registryga laboratoriya presentation profili bilan ulandi: `BIO-002`, `003`, `004`, `007`, `009`, `011`–`015`, `023`, `026`, `030`, `032`, `036`, `037`, `040`. `BIO-005`, `006`, `008`, `010`, `034`, `038`, `039` noto‘g‘ri qurilma sinfiga o‘xshagani uchun registriga kiritilmadi va qayta yaratish navbatida qoldi. Batafsil qarorlar: `docs/reports/hero-batch-audit-2026-08-20.md`.
 
 ## 2026-08-20 verified canonical release
 
-Canonical Drive root tuzatishi va 17 ta qabul qilingan hero-vizual uchun `pnpm run check`, production build, Vitest, katalog hamda DeviceViewer regressiya testlari va continuity audit muvaffaqiyatli yakunlandi. Sanitizatsiyalangan release GitHub `uzme/biolab-interactive-guide` `main` branchiga `de9eea4287e5f85a4b959e5bd01bc42e38f7e1d1` commit bilan yuborildi. Canonical Drive snapshot `BioLab_Interactive_Guide_source.tar.gz` mavjud `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh` fayli joyida yangilandi; parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified time `2026-08-20T06:24:25.426Z`, source fingerprint `d273b32f213065204bde5f49e5a059b05401eb21dfd56546f06ed63da0e21f95`. Holat: **READY**.
+Canonical Drive root tuzatishi va 17 ta qabul qilingan hero-vizual uchun `pnpm run check`, production build, Vitest, katalog hamda DeviceViewer regressiya testlari va continuity audit muvaffaqiyatli yakunlandi. Sanitizatsiyalangan release GitHub `uzme/BioLab` `main` branchiga `de9eea4287e5f85a4b959e5bd01bc42e38f7e1d1` commit bilan yuborildi. Canonical Drive snapshot `BioLab_Interactive_Guide_source.tar.gz` mavjud `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh` fayli joyida yangilandi; parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified time `2026-08-20T06:24:25.426Z`, source fingerprint `d273b32f213065204bde5f49e5a059b05401eb21dfd56546f06ed63da0e21f95`. Holat: **READY**.
 
 ## 2026-08-20 keyingi hero batchlariga tayyorgarlik
 
-Google Gemini connectori foydalanuvchi tasdig‘i bilan faollashtirildi; ulanish holati `enabled: true` va autentifikatsiya kaliti connector konfiguratsiyasida shifrlangan holda saqlanadi. Keyingi rasm batchlari uchun `HERO_VISUAL_BATCH_SUBMISSION_TEMPLATE.md` yaratildi. U faqat canonical **Biotexnologiya yangi** rootiga yuboriladigan `BIO-NNN.webp` fayllari, ZIP nomi va to‘liq Drive linkini talab qiladi; rasm yaratadigan tashqi agentga kod, registry, test yoki release huquqi berilmaydi.
+Google Gemini connectori foydalanuvchi tasdig‘i bilan faollashtirildi; ulanish holati `enabled: true` va autentifikatsiya kaliti connector konfiguratsiyasida shifrlangan holda saqlanadi. Keyingi rasm batchlari uchun `HERO_VISUAL_BATCH_SUBMISSION_TEMPLATE.md` yaratildi. U faqat canonical **Biotexnologiya** rootiga yuboriladigan `BIO-NNN.webp` fayllari, ZIP nomi va to‘liq Drive linkini talab qiladi; rasm yaratadigan tashqi agentga kod, registry, test yoki release huquqi berilmaydi.
 
 Joriy hero-standard qamrovi 33 ta kartaga yetdi. Qolgan 67 ta qurilmaning ichida `BIO-006`, `BIO-008`, `BIO-010`, `BIO-034`, `BIO-038`, `BIO-039` uchun individual qayta yaratish briefi tayyor; `BIO-001` hamda `BIO-041`–`BIO-100` keyingi batchlar navbatida. `pnpm test`, `pnpm run check` va production build ushbu hujjat yangilanishlaridan keyin muvaffaqiyatli yakunlandi.
 
@@ -274,7 +274,7 @@ Foydalanuvchi Gemini orqali yaratib yuborgan qorong‘i laboratoriya fonli mikro
 
 ## 2026-08-20 hero asset recovery qatlami
 
-Qabul qilingan **33 ta** hero WebP asset uchun `docs/reports/hero-asset-recovery-manifest.json` yaratildi. Manifest har bir `BIO-NNN` ID uchun project asset URL, fayl nomi, MIME turi, hajmi va SHA-256 checksumini qayd etadi. Byte-darajadagi yagona recovery nusxa canonical `Biotexnologiya yangi` Drive rootida `BioLab_Hero_Assets_Recovery.tar.gz` (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) fayli sifatida saqlanadi; arxivda 33 ta WebP hamda manifest mavjud. Drive’dan qayta yuklab ochish sinovi `RESTORE_TEST=PASS` natijasini berdi. Yangi PASS hero-vizual kiritilganda mavjud archive fayli **o‘rnida yangilanadi**; duplicate archive yoki yangi Drive papka yaratilmaydi.
+Qabul qilingan **33 ta** hero WebP asset uchun `docs/reports/hero-asset-recovery-manifest.json` yaratildi. Manifest har bir `BIO-NNN` ID uchun project asset URL, fayl nomi, MIME turi, hajmi va SHA-256 checksumini qayd etadi. Byte-darajadagi yagona recovery nusxa canonical `Biotexnologiya` Drive rootida `BioLab_Hero_Assets_Recovery.tar.gz` (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) fayli sifatida saqlanadi; arxivda 33 ta WebP hamda manifest mavjud. Drive’dan qayta yuklab ochish sinovi `RESTORE_TEST=PASS` natijasini berdi. Yangi PASS hero-vizual kiritilganda mavjud archive fayli **o‘rnida yangilanadi**; duplicate archive yoki yangi Drive papka yaratilmaydi.
 
 ## 2026-08-20 mobil DeviceViewer modal tuzatishi
 
@@ -282,13 +282,13 @@ Telefon ekranida “O‘rganish” tugmasi bosilganda faqat fon-blur ko‘rinib,
 
 ## 2026-08-21 canonical hero batch rollout
 
-Handoffdagi Drive batchlar read-only audit qilindi: canonical `Biotexnologiya yangi` rootida 76 ta ZIP mavjud, barcha ZIP integrity tekshiruvdan o‘tdi va ichki WebP fayllari `2560×1440` formatda. 85 ta noyob hero asset aniqlandi; `Batch 15` ko‘rinmaydi, shuning uchun `BIO-041` uchun authoritative final replacement mavjud emas. Ushbu rasm ataylab yangi hero registryga ulanmaydi; avvalgi mahsulot tasviri fallback sifatida saqlanadi.
+Handoffdagi Drive batchlar read-only audit qilindi: canonical `Biotexnologiya` rootida 76 ta ZIP mavjud, barcha ZIP integrity tekshiruvdan o‘tdi va ichki WebP fayllari `2560×1440` formatda. 85 ta noyob hero asset aniqlandi; `Batch 15` ko‘rinmaydi, shuning uchun `BIO-041` uchun authoritative final replacement mavjud emas. Ushbu rasm ataylab yangi hero registryga ulanmaydi; avvalgi mahsulot tasviri fallback sifatida saqlanadi.
 
 Drive auditdan o‘tgan 84 ta yangi WebP `client/src/lib/auditedHeroImageUrls.ts` registryga qo‘shildi. Batch variantlari takrorlangan 10 IDda keyingi authoritative variant tanlandi: `BIO-006 → Batch 06`, `008 → 07`, `010 → 08`, `034 → 09`, `038 → 10`, `039 → 11`, `046 → 24`, `047 → 25`, `048 → 26`, `049 → 27`. Batchda yangi versiyasi bo‘lmagan, lekin avvalgi auditdan o‘tgan 15 ta hero saqlanib qoldi; yakunida **99 / 100** qurilma `cover` + `laboratory` hero presentation profilida ishlaydi. `BIO-041` yagona ochiq bloklovchi bo‘lib qoladi.
 
 `hero-asset-recovery-manifest.json` endi 99 ta qabul qilingan assetning URL, hajm va SHA-256 checksumini qayd etadi. Mavjud canonical `BioLab_Hero_Assets_Recovery.tar.gz` fayli Drive’da duplicate yaratmasdan o‘rnida yangilandi: ID `1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`, hajmi `32,128,941` bayt, SHA-256 `c399c5b5613d209f59e9d25a7155d32802284868d7009aafcb4db6fa8cb7f269`. Batafsil audit: `docs/reports/hero-drive-asset-audit.json` va `docs/reports/HERO_VISUAL_AUDIT_NOTES.md`.
 
-Rolloutdan keyingi `pnpm run check`, production build, Vitest presentation testlari, katalog/rating qidiruv regressiyasi, DeviceViewer mobil regressiyasi va continuity audit muvaffaqiyatli yakunlandi. 390×844 px viewportda katalogning media kontrasti va responsive hero dizayni ko‘zdan kechirildi; regressiya aniqlanmadi. Sanitizatsiyalangan release GitHub `uzme/biolab-interactive-guide` `main` branchiga `26a28fa7d6e2cbb9fe7b91e7654e852bcc97af95` commit bilan yuborildi. Mavjud canonical `BioLab_Interactive_Guide_source.tar.gz` Drive snapshoti duplicate yaratmasdan o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T09:34:55.144Z`, source fingerprint `30096fb90788fe6e1b1d3c7b7e086766f9d4c341b9639d8201e2436865de8534`. Holat: **READY**, faqat BIO-041 authoritative Batch 15 resursi ochiq qoladi.
+Rolloutdan keyingi `pnpm run check`, production build, Vitest presentation testlari, katalog/rating qidiruv regressiyasi, DeviceViewer mobil regressiyasi va continuity audit muvaffaqiyatli yakunlandi. 390×844 px viewportda katalogning media kontrasti va responsive hero dizayni ko‘zdan kechirildi; regressiya aniqlanmadi. Sanitizatsiyalangan release GitHub `uzme/BioLab` `main` branchiga `26a28fa7d6e2cbb9fe7b91e7654e852bcc97af95` commit bilan yuborildi. Mavjud canonical `BioLab_Interactive_Guide_source.tar.gz` Drive snapshoti duplicate yaratmasdan o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T09:34:55.144Z`, source fingerprint `30096fb90788fe6e1b1d3c7b7e086766f9d4c341b9639d8201e2436865de8534`. Holat: **READY**, faqat BIO-041 authoritative Batch 15 resursi ochiq qoladi.
 
 ## 2026-08-21 hero yuklanishini ortiqcha so‘rovlarsiz optimallashtirish
 
@@ -298,21 +298,21 @@ Katalogning dastlabki olti kartasi o‘zining `eager` yuklashini, birinchi uchta
 
 Avvalgi `BIO-041` uchun Batch 15 bloklovchisi batch-raqami bo‘yicha noto‘g‘ri taxmin ekanligi aniqlandi. Read-only canonical inventar `BIO-041.webp` fayli `BioLab_hero_assets_batch_13.zip` ichida ekanini tasdiqladi. Fayl integrity, `2560×1440` WebP metadata, SHA-256 `fcf69a9e93eb91fb8f0bdcb217e612e93f2ff76c27a98e8cb0f1c832f8c43799`, instrument sinfi (Stericup turidagi steril vakuum filtratsiya tizimi) va qorong‘i laboratoriya hero kompozitsiyasi bo‘yicha **PASS** oldi.
 
-BIO-041 deploy-safe storage’ga yuklandi, `auditedHeroImageUrls.ts` registryga ulandi va `cover` + `laboratory` presentation profiliga kiritildi. Natijada barcha **100 / 100** qurilma hero-standardda ishlaydi. Recovery manifest 100 ta assetning URL, hajm va SHA-256 checksumini qamraydi; mavjud `BioLab_Hero_Assets_Recovery.tar.gz` fayli (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) duplicate yaratmasdan o‘rnida yangilandi. TypeScript check, Vitest/katalog/DeviceViewer regressiyalari, production build va continuity audit **PASS**. Sanitizatsiyalangan yakuniy release GitHub `uzme/biolab-interactive-guide` `main` branchiga `cd3997285c45280397e3e95f507cb0e5b20fa54e` commit bilan yuborildi. Canonical snapshot mavjud fayl o‘rnida yangilandi: Drive file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T09:57:19.982Z`, fingerprint `4bdc775283ffba6cbbb3d8013cb8c382128a621b84cc7a7a0f2e7567759c6fdf`. Holat: **READY**.
+BIO-041 deploy-safe storage’ga yuklandi, `auditedHeroImageUrls.ts` registryga ulandi va `cover` + `laboratory` presentation profiliga kiritildi. Natijada barcha **100 / 100** qurilma hero-standardda ishlaydi. Recovery manifest 100 ta assetning URL, hajm va SHA-256 checksumini qamraydi; mavjud `BioLab_Hero_Assets_Recovery.tar.gz` fayli (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) duplicate yaratmasdan o‘rnida yangilandi. TypeScript check, Vitest/katalog/DeviceViewer regressiyalari, production build va continuity audit **PASS**. Sanitizatsiyalangan yakuniy release GitHub `uzme/BioLab` `main` branchiga `cd3997285c45280397e3e95f507cb0e5b20fa54e` commit bilan yuborildi. Canonical snapshot mavjud fayl o‘rnida yangilandi: Drive file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T09:57:19.982Z`, fingerprint `4bdc775283ffba6cbbb3d8013cb8c382128a621b84cc7a7a0f2e7567759c6fdf`. Holat: **READY**.
 
 ## 2026-08-21 tartibli hero recovery batchlari
 
 Hero recovery arxivi saqlash va qayta topish qulayligi uchun qayta tuzildi: barcha 100 ta rasm endi `Batch-001` dan `Batch-100` gacha qurilma raqami, BIO ID va qurilma slugiga ko‘ra alohida kataloglarda joylashadi. Har batch ichida faqat bitta aniq `BIO-NNN.webp` rasm bor. Arxivning ichida `BATCH_INDEX.md` va schema v2 checksum manifest mavjud. Drive’dan qayta yuklangan restore/integrity sinovi **PASS**: 100 uzluksiz batch, 100 WebP va barcha SHA-256 qiymatlari mos. Canonical Drive’dagi mavjud `BioLab_Hero_Assets_Recovery.tar.gz` fayli duplicate yaratmasdan o‘rnida yangilandi: file ID `1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`, modified `2026-08-21T10:05:02.918Z`, hajmi `32,579,873` bayt, SHA-256 `65ecd99d527d681d9e9952e1b352e3a8e193768b8445445b69d3cf65c607f914`.
 
-Tartibli recovery layout kodi va hujjatlari GitHub `uzme/biolab-interactive-guide` `main` branchiga `96aa5dad5b9b21341c5b4ce13bc5df9f28346f60` commit bilan yuborildi. Sanitizatsiyalangan canonical source snapshot mavjud `BioLab_Interactive_Guide_source.tar.gz` fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:08:14.278Z`, source fingerprint `1bccc20b541c85c640181d9cb3976b20f87cb671be0b74c648fa578e075628b0`.
+Tartibli recovery layout kodi va hujjatlari GitHub `uzme/BioLab` `main` branchiga `96aa5dad5b9b21341c5b4ce13bc5df9f28346f60` commit bilan yuborildi. Sanitizatsiyalangan canonical source snapshot mavjud `BioLab_Interactive_Guide_source.tar.gz` fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:08:14.278Z`, source fingerprint `1bccc20b541c85c640181d9cb3976b20f87cb671be0b74c648fa578e075628b0`.
 
 ## 2026-08-21 Drive batch mirror — kelajak uchun bevosita rasm manzili
 
-Foydalanuvchi so‘rovi bilan canonical `Biotexnologiya yangi` rooti ichida faqat BioLab hero-rasmlari uchun bitta subpapka yaratildi: `BioLab_Hero_Assets_By_Batch` (Drive ID `1i3CwBud6QOyWMlEyitXSFm4vD_5jd9ar`). Ushbu mirror ichida `Batch-001__BIO-001__...` dan `Batch-100__BIO-100__...` gacha 100 ta tartibli papka mavjud; har birida faqat o‘z qurilmasiga mos `BIO-NNN.webp` bor. Ildizida `BATCH_INDEX.md` hamda `hero-asset-recovery-manifest.json` saqlanadi.
+Foydalanuvchi so‘rovi bilan canonical `Biotexnologiya` rooti ichida faqat BioLab hero-rasmlari uchun bitta subpapka yaratildi: `BioLab_Hero_Assets_By_Batch` (Drive ID `1i3CwBud6QOyWMlEyitXSFm4vD_5jd9ar`). Ushbu mirror ichida `Batch-001__BIO-001__...` dan `Batch-100__BIO-100__...` gacha 100 ta tartibli papka mavjud; har birida faqat o‘z qurilmasiga mos `BIO-NNN.webp` bor. Ildizida `BATCH_INDEX.md` hamda `hero-asset-recovery-manifest.json` saqlanadi.
 
 Rasmlar canonical recovery arxividan (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) ajratildi. Mirror Drive’dan qayta yuklanib, 100 batch, 100 WebP va barcha manifest SHA-256 qiymatlari bo‘yicha mustaqil restore testi **PASS** bo‘ldi. Mirrorda 102 obyekt (100 rasm + 2 ta indeks/manifest), jami `32,611,543` bayt mavjud. Boshqa loyiha fayllari yoki rasmlari bu subpapkaga kiritilmadi.
 
-Mirror hujjatlari va generatorlari GitHub `uzme/biolab-interactive-guide` `main` branchiga `c914814c588d6f38baa90ff5d494530f1e570156` commit bilan yuborildi. Sanitizatsiyalangan source snapshot mavjud Drive fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:18:29.386Z`, fingerprint `eef0fed3baca62ddfaeadd2e22e781692822adb7d6864e3930c998a684aa03be`.
+Mirror hujjatlari va generatorlari GitHub `uzme/BioLab` `main` branchiga `c914814c588d6f38baa90ff5d494530f1e570156` commit bilan yuborildi. Sanitizatsiyalangan source snapshot mavjud Drive fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:18:29.386Z`, fingerprint `eef0fed3baca62ddfaeadd2e22e781692822adb7d6864e3930c998a684aa03be`.
 
 ## 2026-08-21 yakuniy tarixiy ZIP batchlar
 
@@ -320,7 +320,7 @@ Yangi `BioLab_Historical_Final_Hero_ZIPs` subpapkasi (Drive ID `19dpcDupgvEXS5Jn
 
 Eski rootdagi 76 ta `BioLab_hero_assets_batch_*.zip` xom manba batchi yangi final to‘plam tasdiqlangach Google Drive Chiqindisiga qaytariladigan tarzda ko‘chirildi; rootda bunday ZIP qolmadi. Ular doimiy o‘chirilmagan, lekin platforma uchun kerak emas. To‘liq qoida va manzil: `docs/master-protocols/FINAL_HERO_HISTORY_ZIPS.md`.
 
-Tarixiy ZIP generatorlari, checksum comparison hisoboti va manzil hujjatlari GitHub `uzme/biolab-interactive-guide` `main` branchiga `fdd5c5720b9f426e1dad9832cb7792cfce2305eb` commit bilan yuborildi. Canonical sanitizatsiyalangan source snapshot mavjud `BioLab_Interactive_Guide_source.tar.gz` fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:44:17.870Z`, fingerprint `8fc0bff3f50eff719e289b86209cb8b92a85da36aa7f00a5a83753ad6d36b7e2`.
+Tarixiy ZIP generatorlari, checksum comparison hisoboti va manzil hujjatlari GitHub `uzme/BioLab` `main` branchiga `fdd5c5720b9f426e1dad9832cb7792cfce2305eb` commit bilan yuborildi. Canonical sanitizatsiyalangan source snapshot mavjud `BioLab_Interactive_Guide_source.tar.gz` fayli o‘rnida yangilandi: file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified `2026-08-21T10:44:17.870Z`, fingerprint `8fc0bff3f50eff719e289b86209cb8b92a85da36aa7f00a5a83753ad6d36b7e2`.
 
 ## 2026-08-21 DeviceViewer PWA cache recovery
 
@@ -332,7 +332,7 @@ Yuklanish istisnosi qolsa, DeviceViewer ichidagi “Yangilash va qayta ochish”
 
 Production URLdagi yangi browser kontekstida `BIO-026` testida muammo yana qayta hosil qilindi. Sabab PWA emas, `vite.config.ts`dagi `manualChunks` qoidasi `learningData.ts` bilan birga `learningDataBlock1`–`4` fayllarini ham bitta `learning-data` chunkiga majburan qo‘shgani ekani aniqlandi. Qoida endi faqat `learningData.ts` loader fayliga qo‘llanadi. Yakuniy production build 4 ta mustaqil dynamic asset (`learningDataBlock1`–`4`) yaratishini tasdiqladi; TypeScript, to‘liq testlar va production build **PASS**.
 
-Production smoke-test `https://biolabguide-fbcitqyf.manus.space/` manzilida yangi browser kontekstida o‘tdi: `BIO-001`, `BIO-026`, `BIO-051` va `BIO-076` uchun 16 ta o‘quv bo‘limi, manbalar, xarid accordionlari, katalogga qaytish va mobil oqim **PASS**. Production smoke-test faqat detail oqimini izolyatsiya qilish uchun offline paket hamda offline round-tripni chetlab o‘tdi; to‘liq offline round-trip local regressiyada alohida **PASS**. Birinchi service worker o‘rnatilishi endi bekorchi reload bermaydi, mavjud worker yangilanganda esa faqat bir marta yangilanadi.
+Production smoke-test `https://biolab-interactive-guide.vercel.app/` manzilida yangi browser kontekstida o‘tdi: `BIO-001`, `BIO-026`, `BIO-051` va `BIO-076` uchun 16 ta o‘quv bo‘limi, manbalar, xarid accordionlari, katalogga qaytish va mobil oqim **PASS**. Production smoke-test faqat detail oqimini izolyatsiya qilish uchun offline paket hamda offline round-tripni chetlab o‘tdi; to‘liq offline round-trip local regressiyada alohida **PASS**. Birinchi service worker o‘rnatilishi endi bekorchi reload bermaydi, mavjud worker yangilanganda esa faqat bir marta yangilanadi.
 
 Yakuniy production verifikatsiyasi yangi deploydan keyin qayta bajarildi va **PASS**: desktop hamda mobil oqimda `BIO-001`, `BIO-026`, `BIO-051`, `BIO-076` detail oynalari 16 bo‘lim, rasm manbasi, xarid accordionlari va qaytish navigatsiyasini muvaffaqiyatli yukladi. Holat: **READY**.
 
@@ -340,7 +340,7 @@ Yakuniy production verifikatsiyasi yangi deploydan keyin qayta bajarildi va **PA
 
 Foydalanuvchi bildirgan holat — “O‘rganish” detail oynasining pastki qismdan ochilishi — modal overlay hamda uning ichki viewer konteynerining scroll holati bilan bog‘liq edi. `Home.tsx`da ikkala konteynerga ref berildi va tanlangan qurilma o‘zgarganda `useLayoutEffect` orqali `scrollTop = 0` paintdan oldin majburan o‘rnatildi. Regression test modalni pastga surib yopadi, keyingi detail ochilganda desktop va mobil oqimlarda yuqori pozitsiyani tekshiradi. TypeScript, Vitest/Playwright va production build **PASS**; production deploydan keyingi smoke-test navbatda.
 
-Production deploydan keyingi smoke-test `https://biolabguide-fbcitqyf.manus.space/` manzilida `BIOLAB_SKIP_OFFLINE_PACK=true` va `BIOLAB_SKIP_OFFLINE_ROUND_TRIP=true` izolyatsiya rejimida qayta bajarildi va **PASS**. Desktop hamda mobil detail oqimlari, to‘rtta dinamik o‘quv blok, modalning yuqoridan boshlanishi va katalogga qaytish tekshirildi. Holat: **READY**.
+Production deploydan keyingi smoke-test `https://biolab-interactive-guide.vercel.app/` manzilida `BIOLAB_SKIP_OFFLINE_PACK=true` va `BIOLAB_SKIP_OFFLINE_ROUND_TRIP=true` izolyatsiya rejimida qayta bajarildi va **PASS**. Desktop hamda mobil detail oqimlari, to‘rtta dinamik o‘quv blok, modalning yuqoridan boshlanishi va katalogga qaytish tekshirildi. Holat: **READY**.
 
 ## 2026-08-21 professional precision-biotech dizayn qatlami
 
@@ -348,7 +348,7 @@ Ma’lumotlar, 100 ta qurilma mappingi va 16 bo‘limli SOP tarkibi o‘zgartiri
 
 `prefers-reduced-motion` hamda Sozlamalardagi “Kamroq animatsiya” tanlovi tugma, modal, drawer, katalog va karusel harakatlarini o‘chiradi. Browser regressiyasi `768×1024`da LAB-01 railning 16 raqami bilan `8×2` grid, kamida 24 px qadam kengligi va tartibli `01`–`16` etiketlarini tekshiradi. Mobil, planshet, desktop va `1920×1080` katta ekran auditida hero, rail, katalog va gorizontal sahna qabul qilindi; `pnpm check`, katalog/DeviceViewer browser regressiyalari hamda production build **PASS**.
 
-Production smoke-test `https://biolabguide-fbcitqyf.manus.space/` manzilida cache-bypass query va izolyatsiyalangan offline flags bilan yakuniy qayta bajarildi. Bosh sahifa, katalog tartibi, qidiruv/tozalash, yangi gorizontal karusel bosqaruvlari hamda mobil rasm yuklanishi **PASS**. Holat: **READY**.
+Production smoke-test `https://biolab-interactive-guide.vercel.app/` manzilida cache-bypass query va izolyatsiyalangan offline flags bilan yakuniy qayta bajarildi. Bosh sahifa, katalog tartibi, qidiruv/tozalash, yangi gorizontal karusel bosqaruvlari hamda mobil rasm yuklanishi **PASS**. Holat: **READY**.
 
 ## 2026-08-21 iPhone detail boshlang‘ich holati va 100 qurilma yuklanishi
 
@@ -358,6 +358,6 @@ Detail ma’lumotlari uchun `Promise.allSettled` qo‘llanadi: purchase block xa
 
 `resolveDeviceContent` yordamchisi DeviceViewer’ning mustaqil loader kontraktini testlanadigan ko‘rinishga olib chiqdi. Purchase loaderi qasddan `reject` qilinganda ham BIO-026 o‘quv dosyesi va uning 16 bo‘limi saqlanadi; Vitest suite endi 11 test bilan **PASS**. Bu holat xarid bo‘limi vaqtincha yuklanmasa ham detail oynasi ko‘rinmay qolmasligini kafolatlaydi.
 
-Yangi production checkpointidan keyin `https://biolabguide-fbcitqyf.manus.space/` URLida cache-bypass query bilan, iPhone Safari user-agent, touch va 390×844 viewport emulyatsiyasida final smoke-test bajarildi. `BIO-001`, `BIO-026`, `BIO-051` va `BIO-076` to‘rtta dinamik blokdan detail oynasi ochildi, 16 bo‘lim hamda xarid bo‘limlari yuklandi, modal avval pastga surilib yopilgach keyingi ochilish 1-bo‘limdan boshlandi. Holat: **READY / production PASS**.
+Yangi production checkpointidan keyin `https://biolab-interactive-guide.vercel.app/` URLida cache-bypass query bilan, iPhone Safari user-agent, touch va 390×844 viewport emulyatsiyasida final smoke-test bajarildi. `BIO-001`, `BIO-026`, `BIO-051` va `BIO-076` to‘rtta dinamik blokdan detail oynasi ochildi, 16 bo‘lim hamda xarid bo‘limlari yuklandi, modal avval pastga surilib yopilgach keyingi ochilish 1-bo‘limdan boshlandi. Holat: **READY / production PASS**.
 
 Xatolikdan tiklanish dalili productionda sun’iy nosozlik kiritish orqali emas, alohida unit regression orqali berildi: purchase promise `reject` qilinganda `resolveDeviceContent` learning natijani va 16-bo‘limli o‘quv oqimini saqlaydi, purchase esa xavfsiz bo‘sh holatga tushadi. Ushbu test **PASS**; production smoke-test esa faqat real success-path yuklanishini tasdiqlaydi.

@@ -18,7 +18,7 @@ The server provides type-safe contracts via tRPC. Drizzle schema and migrations 
 
 ## Deployment & Synchronization Flow
 
-`node scripts/release/sync_release.mjs --check` validates typecheck, production build, catalog/device regression tests, and sanitisation fingerprints. `--publish` executes these checks and pushes a sanitised snapshot without secrets to the canonical GitHub repository `uzme/biolab-interactive-guide` on the `main` branch, as well as updating the canonical BioLab Google Drive root folder `Biotexnologiya yangi` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`).
+`node scripts/release/sync_release.mjs --check` validates typecheck, production build, catalog/device regression tests, and sanitisation fingerprints. `--publish` executes these checks and pushes a sanitised snapshot without secrets to the canonical GitHub repository `uzme/BioLab` on the `main` branch, as well as updating the canonical BioLab Google Drive root folder `Biotexnologiya` (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`).
 
 ## Reproducibility Boundary
 

@@ -1,15 +1,15 @@
 # BioLab Interactive Guide — Reproduction Guide
 
-This guide details how to reproduce the BioLab Interactive Guide from the canonical sanitised archive in the `uzme/biolab-interactive-guide` repository without relying on the original working directory or committed secrets.
+This guide details how to reproduce the BioLab Interactive Guide from the canonical sanitised archive in the `uzme/BioLab` repository without relying on the original working directory or committed secrets.
 
 ## Step 1: Clone the Canonical Biotexnologiya Repository
 
 ```bash
-git clone https://github.com/uzme/biolab-interactive-guide.git
+git clone https://github.com/uzme/BioLab.git
 cd biolab-interactive-guide
 ```
 
-The BioLab project is the root of the `uzme/biolab-interactive-guide` repository. It has its own `package.json` and lockfile, so dependency installation runs directly from this repository root.
+The BioLab project is the root of the `uzme/BioLab` repository. It has its own `package.json` and lockfile, so dependency installation runs directly from this repository root.
 
 ## Step 2: Install Runtime and Dependencies
 
@@ -67,4 +67,4 @@ node scripts/release/sync_release.mjs --check
 node scripts/release/sync_release.mjs --publish
 ```
 
-The release script creates a sanitised archive, excludes `.env*`, `.git`, runtime logs, dependency folders, build outputs, and archive files, scans source text for common secret formats, pushes the verified BioLab source under `biolab-interactive-guide` to `uzme/biolab-interactive-guide` `main`, and creates or updates the single BioLab snapshot inside the configured Biotexnologiya Drive parent. It writes only to the canonical Biotexnologiya Drive root and never to unrelated Drive folders.
+The release script creates a sanitised archive, excludes `.env*`, `.git`, runtime logs, dependency folders, build outputs, and archive files, scans source text for common secret formats, pushes the verified BioLab source under `biolab-interactive-guide` to `uzme/BioLab` `main`, and creates or updates the single BioLab snapshot inside the configured Biotexnologiya Drive parent. It writes only to the canonical Biotexnologiya Drive root and never to unrelated Drive folders.

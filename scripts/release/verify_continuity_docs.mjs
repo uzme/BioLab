@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const CANONICAL_REPOSITORY = "uzme/biolab-interactive-guide";
+const CANONICAL_REPOSITORY = "uzme/BioLab";
 const CANONICAL_DRIVE_ROOT_ID = "19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV";
 const requiredDocs = [
   "README.md",

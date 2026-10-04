@@ -7,14 +7,15 @@ Men BioLab Interactive Guide loyihasining mavjud, ishlayotgan source-of-truth ve
 
 ### SOURCE OF TRUTH
 
-- GitHub repository: https://github.com/uzme/biolab-interactive-guide
+- GitHub repository: https://github.com/uzme/BioLab
 - Branch: main
-- Google Drive canonical root name: Biotexnologiya yangi
+- Google Drive canonical root name: Biotexnologiya
 - Google Drive canonical root ID: 19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV
-- Canonical snapshot name: BioLab_Interactive_Guide_source.tar.gz
-- Existing canonical snapshot file ID: 1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh
-- Canonical production URL: https://biolabguide-fbcitqyf.manus.space/
-- Hosting policy: faqat Manus Autoscale production manzilidan foydalaning. Eski Vercel `biolab-interactive-guide` loyihasi butunlay o‘chirilgan; uning uchta `biolab-interactive-guide*.vercel.app` aliasi `404` qaytaradi. Ularni production, preview, restore yoki source-of-truth sifatida ishlatmang.
+- Current handoff archive name: BioLab_Handoff_2026-10-04_13-56.zip
+- Current handoff archive file ID: 1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh
+- Canonical production URL: https://biolab-interactive-guide.vercel.app/
+- Vercel project: `biolab` (`prj_V2sc4VlkUiqGkxShtqfYFgjrLh9L`), GitHub `uzme/BioLab` bilan ulangan.
+- Current production deployment: `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY`, state `READY`, commit `b67ca811e240257110b353e6d3800ade9cacca1c`.
 
 ### QAT’IY SAQLANADIGAN FUNKSIYALAR
 
@@ -43,10 +44,10 @@ Quyidagilarni saqlang va regressiya bilan himoyalang:
 
 1. Google Workspace account faol va OAuth token yaroqli ekanini tekshiring. Token expired bo‘lsa, write amallarini boshlamang; qayta autentifikatsiya so‘rang.
 2. Folder IDni faqat nom bilan taxmin qilmang. files.get orqali ID nomini va parentini tekshiring.
-3. Faqat Biotexnologiya yangi root ID 19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV ichida ishlang.
+3. Faqat Biotexnologiya root ID 19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV ichida ishlang.
 4. Kodlar, PUBG, Skills yoki boshqa Drive papkalariga tegmang.
-5. Write’dan oldin exact query bilan BioLab_Interactive_Guide_source.tar.gz fayllarini sanang. Canonical root ichida faol exact-name fayl soni 1 ta bo‘lishi kerak.
-6. Duplicate yaratmang. Mavjud file ID 1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjhni update-in-place qiling.
+5. Write’dan oldin exact query bilan `BioLab_Handoff_2026-10-04_13-56.zip` faylini sanang. Canonical root ichida faol exact-name fayl soni 1 ta bo‘lishi kerak.
+6. Duplicate yaratmang. Mavjud file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`ni update-in-place qiling yoki foydalanuvchi tasdig‘i bilan yangi dated handoff yarating.
 7. Write’dan keyin yana files.get va exact-name query bilan parent ID, file ID, modified time, size, checksum, trashed va duplicate countni tekshiring.
 8. .env, token, API key, PAT, password, service-role key, log, node_modules, dist, .git va runtime fayllarni Drive’ga yubormang.
 
@@ -64,10 +65,10 @@ node scripts/release/sync_release.mjs --check
 ### GITHUB RELEASE PROTOKOLI
 
 1. gh auth statusni tekshiring.
-2. Sanitizatsiyalangan source’ni faqat uzme/biolab-interactive-guide repository main branchiga yuboring.
+2. Sanitizatsiyalangan source’ni faqat `uzme/BioLab` repository `main` branchiga yuboring.
 3. Pushdan keyin git ls-remote origin refs/heads/main bilan live commitni tasdiqlang.
 
 ### FINAL REPORT FORMAT
 
-Yakuniy hisobotda READY yoki NOT READY holatini, bajarilgan testlarni, GitHub commitni, Drive file IDni va Manus canonical production URL holatini aniq yozing.
+Yakuniy hisobotda READY yoki NOT READY holatini, bajarilgan testlarni, GitHub commitni, Drive file IDni va Vercel canonical production URL holatini aniq yozing.
 ```

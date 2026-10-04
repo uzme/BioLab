@@ -4,7 +4,15 @@ BioLab Interactive Guide is a professional biotechnology learning platform featu
 
 ## Current Source of Truth
 
-The active canonical source repository is [`uzme/biolab-interactive-guide`](https://github.com/uzme/biolab-interactive-guide) on the `main` branch. Complete binary and sanitised application snapshots reside in the canonical Google Drive root folder **Biotexnologiya yangi** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`). The separate **Second Brain** Drive root is not a BioLab write destination. Real credentials and secrets remain strictly in secure environment storage.
+The active canonical source repository is [`uzme/BioLab`](https://github.com/uzme/BioLab) on the `main` branch. Complete binary and sanitised application snapshots reside in the canonical Google Drive root folder **Biotexnologiya** (`19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`). The separate **Second Brain** Drive root is not a BioLab write destination. Real credentials and secrets remain strictly in secure environment storage.
+
+## Live deployment and current handoff
+
+- Production website: https://biolab-interactive-guide.vercel.app/
+- Vercel project: `biolab`, latest production deployment `READY`
+- Current GitHub commit: `b67ca811e240257110b353e6d3800ade9cacca1c`
+- Current Drive handoff: `BioLab_Handoff_2026-10-04_13-56.zip`, file ID `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`
+- Drive handoff MD5: `5452bae0162e000a2c80723812e6867c`
 
 ## Tech Stack
 

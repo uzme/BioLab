@@ -8,7 +8,7 @@ Ushbu katalog BioLab Interactive Guide platformasida ishlayotgan **eng yangi va 
 
 | Maydon | Qiymat |
 |---|---|
-| Asosiy root | `Biotexnologiya yangi` — `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` |
+| Asosiy root | `Biotexnologiya` — `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV` |
 | History subpapkasi | `BioLab_Historical_Final_Hero_ZIPs` |
 | History subpapka IDsi | `19dpcDupgvEXS5JnznEUW0-lbagewubGE` |
 | Batchlar | `Batch-001__BIO-001__…zip` dan `Batch-100__BIO-100__…zip` gacha |

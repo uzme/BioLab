@@ -5,10 +5,10 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, resolve } from "node:path";
 
 const PROJECT_ROOT = resolve(process.cwd());
-const CANONICAL_GITHUB_REPOSITORY = "uzme/biolab-interactive-guide";
-const CANONICAL_DRIVE_ROOT_ID = "19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV"; // BioLab — Biotexnologiya yangi root folder ID
+const CANONICAL_GITHUB_REPOSITORY = "uzme/BioLab";
+const CANONICAL_DRIVE_ROOT_ID = "19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV"; // BioLab — Biotexnologiya root folder ID
 const DRIVE_SNAPSHOT_NAME = "BioLab_Interactive_Guide_source.tar.gz";
-const RCLONE_DRIVE_DESTINATION = `manus_google_drive:Biotexnologiya yangi/${DRIVE_SNAPSHOT_NAME}`;
+const RCLONE_DRIVE_DESTINATION = `manus_google_drive:Biotexnologiya/${DRIVE_SNAPSHOT_NAME}`;
 const RCLONE_CONFIG_PATH = "/home/ubuntu/.gdrive-rclone.ini";
 const GITHUB_PROJECT_PATH = ".";
 const mode = process.argv[2];
@@ -219,7 +219,7 @@ function copyProjectToCanonicalRepository(destination) {
 
 function publishToGitHub() {
   const temporaryDirectory = mkdtempSync(join(tmpdir(), "biolab-github-"));
-  const repositoryPath = join(temporaryDirectory, "biolab-interactive-guide");
+  const repositoryPath = join(temporaryDirectory, "BioLab");
   try {
     run("gh", ["repo", "clone", CANONICAL_GITHUB_REPOSITORY, repositoryPath], PROJECT_ROOT, true);
     for (const entry of readdirSync(repositoryPath)) {
@@ -265,11 +265,11 @@ try {
     process.exit(0);
   }
 
-  console.log("[3/4] Tekshirilgan BioLab kodi uzme/biolab-interactive-guide main branchiga yuborilmoqda...");
+  console.log("[3/4] Tekshirilgan BioLab kodi uzme/BioLab main branchiga yuborilmoqda...");
   const githubCommit = publishToGitHub();
   console.log(`[GitHub] ${githubCommit}`);
 
-  console.log("[4/4] Snapshot Biotexnologiya yangi BioLab Drive papkasiga yuklanmoqda yoki mavjud nusxa yangilanmoqda...");
+  console.log("[4/4] Snapshot Biotexnologiya BioLab Drive papkasiga yuklanmoqda yoki mavjud nusxa yangilanmoqda...");
   const { metadata: driveFile, transport: driveTransport } = uploadOrUpdateDriveWithFallback(archive.snapshotPath, archive.sourceFingerprint);
   console.log(JSON.stringify({
     githubRepository: `https://github.com/${CANONICAL_GITHUB_REPOSITORY}`,
