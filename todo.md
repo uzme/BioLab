@@ -208,3 +208,5 @@
 - [x] 2026-10-04: Handoff hujjatlari va release canonical ma’lumotlarini uzme/BioLab, Vercel production va Biotexnologiya Drive rootiga moslab yangilash.
 
 - [x] 2026-10-04: Dark/OLED rejimida Settings dialog oqish legal kartalarini Modern Precision Biotech teal palitrasiga moslashtirish.
+
+- [x] 2026-10-04: Handoff ZIP ichiga GitHub, Vercel va Google Drive linklari, ID’lari, tekshirish buyruqlari va keyingi chat continuation yo‘riqnomasini qo‘shish.

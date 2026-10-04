@@ -46,6 +46,14 @@ The build may report the existing large JavaScript chunk advisory; it does not f
 - Google Drive archive: `BioLab_Handoff_2026-10-04_13-56.zip` (`1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`)
 - Archive checksum: Drive file metadata’da tashqi ravishda tekshiriladi; checksum ZIP ichiga self-reference sababli joylashtirilmaydi.
 
+## Keyingi chat uchun tayyor yo‘riqnoma
+
+Barcha GitHub, Vercel va Google Drive linklari, ID’lari, metadata tekshirish buyruqlari, update-in-place qoidasi va copy-paste continuation prompt quyidagi faylda jamlangan:
+
+- [`HANDOFF_NEXT_CHAT.md`](HANDOFF_NEXT_CHAT.md)
+
+Yangi chatga faqat ZIPni yuborish kifoya: avval shu fayl, keyin `docs/master-protocols/` hujjatlari o‘qiladi. Maxfiy kalitlar va tokenlar handoffga kiritilmagan.
+
 ## Restore and run
 
 ```bash
