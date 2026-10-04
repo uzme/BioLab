@@ -726,7 +726,6 @@ body {
 .landing-hero::after { position: absolute; z-index: 0; inset: 0; background: linear-gradient(115deg, transparent 34%, oklch(0.76 0.16 174 / 0.12) 49%, transparent 62%); content: ""; pointer-events: none; transform: translateX(-125%); }
 .landing-hero-visual, .landing-hero-panel { position: relative; z-index: 1; }
 .landing-hero-visual { position: relative; min-height: 14.5rem; overflow: hidden; border-bottom: 1px solid oklch(0.67 0.12 176 / 0.22); background: oklch(0.16 0.075 186); }
-.landing-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% center; opacity: 0.78; mix-blend-mode: luminosity; }
 .landing-hero-image-shade { position: absolute; inset: 0; background: linear-gradient(135deg, oklch(0.1 0.055 194 / 0.8), oklch(0.12 0.08 185 / 0.42) 62%, oklch(0.1 0.04 195 / 0.74)); }
 .landing-hero-visual::after { position: absolute; inset: 0; background-image: linear-gradient(oklch(0.78 0.1 174 / 0.11) 1px, transparent 1px), linear-gradient(90deg, oklch(0.78 0.1 174 / 0.11) 1px, transparent 1px); background-size: 1.65rem 1.65rem; content: ""; mask-image: linear-gradient(90deg, black, transparent 95%); }
 .landing-visual-top, .landing-visual-core, .landing-visual-bottom { position: absolute; z-index: 1; }
@@ -1199,4 +1198,42 @@ body { background: linear-gradient(180deg, color-mix(in oklab, var(--background)
 button, input, [role="button"] { transition-duration: 180ms; }
 button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 78%, var(--primary)); outline-offset: 3px; }
 @media (min-width: 900px) { .landing-hero { grid-template-columns: minmax(0, 1.07fr) minmax(26rem, .93fr); } .landing-hero-visual { min-height: 31rem; border-right: 1px solid rgba(160, 231, 211, .18); border-bottom: 0; } .landing-hero-panel { display: flex; flex-direction: column; justify-content: center; padding: 3.1rem 3rem 2.6rem; } }
-@media (max-width: 639px) { .page-frame { padding-top: 1.1rem; } .landing-hero { border-radius: .9rem; } .landing-hero-panel { padding: 1.35rem 1.05rem 1.1rem; } .landing-hero-title { font-size: clamp(2.35rem, 12vw, 3.3rem); } .metric-card { padding: 1rem !important; } .equipment-card figure { height: 12.75rem; } }
+
+
+/* BioLab entry splash motion: visual language stays unchanged; only transform and opacity animate. */
+.lab-entry-splash-logo-wrap { position: relative; display: grid; place-items: center; transform: translateY(20px); opacity: 0; animation: entry-rise-in 420ms var(--ease-out) 120ms forwards; }
+.lab-entry-splash-logo { animation: none; }
+.lab-entry-splash-dna { position: absolute; top: 50%; left: 50%; width: min(31%, 180px); height: min(48%, 260px); overflow: visible; opacity: .78; pointer-events: none; transform: translate(-50%, -50%); }
+.lab-entry-splash-dna path { fill: none; stroke: rgba(255, 211, 112, .88); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.35; stroke-dasharray: 640; stroke-dashoffset: 640; animation: entry-dna-draw 1100ms var(--ease-out) 180ms forwards; }
+.lab-entry-splash-bubbles { position: absolute; inset: 31% 33% 27%; pointer-events: none; }
+.lab-entry-splash-bubbles i { position: absolute; bottom: 0; left: calc((var(--bubble-index, 1) - 1) * 18%); width: 5px; height: 5px; border: 1px solid rgba(255, 211, 112, .72); border-radius: 50%; opacity: 0; animation: entry-bubble-rise 3.8s ease-in-out infinite; }
+.lab-entry-splash-bubbles i:nth-child(2) { --bubble-index: 2; animation-delay: .6s; width: 4px; height: 4px; }
+.lab-entry-splash-bubbles i:nth-child(3) { --bubble-index: 3; animation-delay: 1.4s; }
+.lab-entry-splash-bubbles i:nth-child(4) { --bubble-index: 4; animation-delay: 2.1s; width: 3px; height: 3px; }
+.lab-entry-splash-bubbles i:nth-child(5) { --bubble-index: 5; animation-delay: .25s; }
+.lab-entry-splash-bubbles i:nth-child(6) { --bubble-index: 6; animation-delay: 2.8s; width: 4px; height: 4px; }
+.lab-entry-splash-brand-name { position: relative; transform: translateY(20px); opacity: 0; animation: entry-rise-in 420ms var(--ease-out) 520ms forwards; background-size: 180% 100%; }
+.lab-entry-splash-brand-name::after { position: absolute; inset: 0; border-radius: .2em; background: linear-gradient(105deg, transparent 36%, rgba(255, 247, 196, .9) 49%, transparent 62%); content: ""; opacity: 0; pointer-events: none; transform: translateX(-130%); animation: entry-shimmer 950ms ease-out 1250ms 1 both; }
+.lab-entry-splash-brand-author { transform: translateY(20px); opacity: 0; animation: entry-rise-in 420ms var(--ease-out) 880ms forwards; }
+.lab-entry-splash-footer p { transform: translateY(20px); opacity: 0; animation: entry-rise-in 420ms var(--ease-out) 1240ms forwards; }
+.lab-entry-splash-action { position: relative; overflow: hidden; transform: translateY(20px); opacity: 0; animation: entry-rise-in 420ms var(--ease-out) 1600ms forwards; transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out), filter 160ms var(--ease-out); }
+.lab-entry-splash-action::after { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255, 249, 210, .72) 49%, transparent 63%); content: ""; opacity: 0; pointer-events: none; transform: translateX(-130%); animation: entry-button-shine 4.6s ease-in-out 2.2s infinite; }
+.lab-entry-splash-action:active { transform: scale(.97) !important; }
+.lab-entry-splash-halo { opacity: .5; animation: entry-glow-breathe 3.6s ease-in-out infinite; }
+.lab-entry-splash-particles { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+.lab-entry-splash-particles span { position: absolute; top: var(--particle-y); left: var(--particle-x); width: var(--particle-size); aspect-ratio: 1; border-radius: 50%; background: hsl(calc(42 + (var(--particle-index) * 29)) 72% 62%); opacity: .2; transform: translate3d(0, 0, 0); animation: entry-particle-float 9s ease-in-out infinite alternate; animation-delay: calc(var(--particle-index) * -0.8s); }
+.lab-entry-splash-portal { position: absolute; z-index: 4; top: 50%; left: 50%; width: 12vmin; height: 12vmin; border-radius: 50%; background: radial-gradient(circle, rgba(255, 224, 133, .95), rgba(87, 190, 144, .72) 42%, rgba(0, 0, 0, 0) 72%); opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(0); }
+.lab-entry-splash.is-entering .lab-entry-splash-portal { animation: entry-portal-expand 600ms cubic-bezier(.2,.82,.24,1) forwards; }
+.lab-entry-splash.is-entering .lab-entry-splash-brand,
+.lab-entry-splash.is-entering .lab-entry-splash-footer { animation: entry-content-exit 600ms ease-out forwards; }
+@keyframes entry-rise-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes entry-dna-draw { to { stroke-dashoffset: 0; } }
+@keyframes entry-bubble-rise { 0% { opacity: 0; transform: translate3d(0, 2px, 0) scale(.7); } 24% { opacity: .82; } 100% { opacity: 0; transform: translate3d(9px, -42px, 0) scale(1.05); } }
+@keyframes entry-glow-breathe { 0%, 100% { opacity: .34; transform: scale(.96); } 50% { opacity: .72; transform: scale(1.04); } }
+@keyframes entry-particle-float { from { opacity: .16; transform: translate3d(-5px, 8px, 0); } to { opacity: .38; transform: translate3d(7px, -12px, 0); } }
+@keyframes entry-shimmer { 0%, 22% { opacity: 0; transform: translateX(-130%); } 48%, 68% { opacity: .92; transform: translateX(130%); } 100% { opacity: 0; transform: translateX(130%); } }
+@keyframes entry-button-shine { 0%, 58% { opacity: 0; transform: translateX(-130%); } 69%, 79% { opacity: .86; transform: translateX(130%); } 100% { opacity: 0; transform: translateX(130%); } }
+@keyframes entry-portal-expand { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0); } 18% { opacity: 1; } 100% { opacity: 1; transform: translate(-50%, -50%) scale(18); } }
+@keyframes entry-content-exit { to { opacity: 0; transform: scale(.985); } }
+@media (max-width: 639px) { .lab-entry-splash-particles span:nth-child(n + 19) { display: none; } .lab-entry-splash-dna { width: 34%; height: 46%; } }
+@media (prefers-reduced-motion: reduce) { .lab-entry-splash-logo-wrap, .lab-entry-splash-brand-name, .lab-entry-splash-brand-author, .lab-entry-splash-footer p, .lab-entry-splash-action { animation: none; opacity: 1; transform: none; } .lab-entry-splash-dna path { animation: none; stroke-dashoffset: 0; } .lab-entry-splash-particles, .lab-entry-splash-bubbles, .lab-entry-splash-dna, .lab-entry-splash-brand-name::after, .lab-entry-splash-action::after { display: none; } .lab-entry-splash-halo { animation: none; opacity: .5; transform: none; } .lab-entry-splash-portal { display: none; } .lab-entry-splash.is-entering .lab-entry-splash-brand, .lab-entry-splash.is-entering .lab-entry-splash-footer { animation: none; opacity: 1; } }
