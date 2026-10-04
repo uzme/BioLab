@@ -39,7 +39,7 @@ The build may report the existing large JavaScript chunk advisory; it does not f
 ## Connected services
 
 - GitHub: https://github.com/uzme/BioLab
-- GitHub `main` commit: `f8c173ee545c0f0ddbc174ddfad0f3f0af8f868c`
+- GitHub: `main` branchning live HEAD’ini tekshiring; exact commit handoff yaratilgan paytda `git log -1` orqali olinadi.
 - Vercel project: `biolab`
 - Vercel production domain: https://biolab-interactive-guide.vercel.app (`READY`, deployment `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY`)
 - Google Drive folder: https://drive.google.com/drive/folders/19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV
