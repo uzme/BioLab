@@ -787,6 +787,38 @@ body {
 .dark .hero-sop-rail { border-color: oklch(0.51 0.1 179 / 0.75) !important; background: linear-gradient(100deg, oklch(0.14 0.04 195 / 0.94), oklch(0.19 0.07 184 / 0.86)) !important; }
 .dark .module-header { border-color: oklch(0.38 0.065 185) !important; background: linear-gradient(90deg, oklch(0.23 0.055 187), oklch(0.205 0.03 195)) !important; }
 
+/* Settings is rendered through a portal, so its light-mode utility colors need
+   an explicit dark-mode surface layer instead of relying on inherited tokens. */
+html.dark [data-settings-dialog] > div {
+  border-color: oklch(0.38 0.09 184) !important;
+  background-color: oklch(0.12 0.035 195) !important;
+  color: oklch(0.9 0.035 178) !important;
+}
+html.dark [data-settings-dialog] header,
+html.dark [data-settings-dialog] [class*="bg-white"],
+html.dark [data-settings-dialog] [class*="bg-[#f7fbfa]"],
+html.dark [data-settings-dialog] [class*="bg-[#eef7f4]"],
+html.dark [data-settings-dialog] [class*="bg-[#edf7f4]"] {
+  border-color: oklch(0.34 0.07 185) !important;
+  background-color: oklch(0.16 0.045 195) !important;
+}
+html.dark [data-settings-dialog] [class*="bg-white/80"] { background-color: oklch(0.2 0.055 190 / 0.92) !important; }
+html.dark [data-settings-dialog] [class*="border-[#cfe4db]"],
+html.dark [data-settings-dialog] [class*="border-[#dcebe5]"],
+html.dark [data-settings-dialog] [class*="border-[#d8e7e3]"],
+html.dark [data-settings-dialog] [class*="border-[#b9d9cf]"],
+html.dark [data-settings-dialog] [class*="border-[#a2d3c2]"] { border-color: oklch(0.36 0.08 184) !important; }
+html.dark [data-settings-dialog] [class*="text-[#173d42]"],
+html.dark [data-settings-dialog] [class*="text-[#245b53]"],
+html.dark [data-settings-dialog] [class*="text-[#1b4b45]"],
+html.dark [data-settings-dialog] [class*="text-[#68857f]"] { color: oklch(0.78 0.045 181) !important; }
+html.dark [data-settings-dialog] [class*="text-[#0d7774]"],
+html.dark [data-settings-dialog] [class*="text-[#0e7774]"],
+html.dark [data-settings-dialog] [class*="text-[#0e6f67]"] { color: oklch(0.78 0.14 174) !important; }
+html.dark [data-settings-dialog] input,
+html.dark [data-settings-dialog] select,
+html.dark [data-settings-dialog] option { color-scheme: dark; }
+
 /* This must follow the general dark shell layer: it intentionally removes every
    gradient on OLED screens and makes the computed document background true black. */
 html.dark.oled,

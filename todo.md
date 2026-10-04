@@ -206,3 +206,5 @@
 - [x] 2026-09-27: OLED true-black toggle DOM rangini state effectdan oldin sinxron qo‘llash va release regressionini qayta PASS qilish.
 
 - [x] 2026-10-04: Handoff hujjatlari va release canonical ma’lumotlarini uzme/BioLab, Vercel production va Biotexnologiya Drive rootiga moslab yangilash.
+
+- [x] 2026-10-04: Dark/OLED rejimida Settings dialog oqish legal kartalarini Modern Precision Biotech teal palitrasiga moslashtirish.
