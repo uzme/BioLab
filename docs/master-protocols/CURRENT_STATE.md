@@ -21,7 +21,7 @@
 - **Hero source correction:** `BIO-041.webp` canonical `BioLab_hero_assets_batch_13.zip` ichidan tasdiqlandi; 2560×1440 WebP, SHA-256 `fcf69a9e93eb91fb8f0bdcb217e612e93f2ff76c27a98e8cb0f1c832f8c43799`. Recovery archive (`1s6Uhum2PxA1RWzVP1VDHAj12-AhZdT08`) 100 ta hero asset bilan o‘rnida yangilandi.
 - **Hero asset mirror:** `Biotexnologiya/BioLab_Hero_Assets_By_Batch` — Drive ID `1i3CwBud6QOyWMlEyitXSFm4vD_5jd9ar`; 100 batch, 100 checksum-verified WebP, rootda `BATCH_INDEX.md` va manifest mavjud.
 - **Final hero ZIP history:** `Biotexnologiya/BioLab_Historical_Final_Hero_ZIPs` — Drive ID `19dpcDupgvEXS5JnznEUW0-lbagewubGE`; 100 final ZIP batch, 100 checksum-verified WebP hamda 3 nazorat fayli mavjud. Eski 76 xom source ZIP Drive Chiqindisida, root esa tozalangan.
-- **Latest verified release:** GitHub `11dae1f6970a6fc923c954fd85611d68e8422266`; Vercel deployment `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY` is `READY` for the prior source commit; Drive handoff file `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified/checksum Drive metadata’da tashqi verifikatsiya qilinadi.
+- **Latest verified release:** GitHub `f8c173ee545c0f0ddbc174ddfad0f3f0af8f868c`; Vercel deployment `dpl_D7d8D1Yer6kZKFc5ece3MwVMNtEY` is `READY` for the prior source commit; Drive handoff file `1q3PT-h_0FOHSoTIRMfQ6IOaRqHYkrgjh`, parent `19um8Y1EuuZbbTR2ncXDeg6mekc_xorhV`, modified/checksum Drive metadata’da tashqi verifikatsiya qilinadi.
 - **Database:** Schema va migration metadata repositorydagi `drizzle/` katalogida saqlanadi; destructive migration bajarilmagן
 
 ## Qat’iy saqlanadigan source-of-truth
